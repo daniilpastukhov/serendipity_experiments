@@ -25,28 +25,30 @@ def distance(i, j):
     return 1 - similarity(i, j)
 
 
-def novelty(recommendations, user_profile):
+def novelty(recommendations, user_profile, mode=np.mean):
     """
     Calculates novelty of recommendation for user with profile `user_profile`.
     :param recommendations: Recommendations as embeddings.
     :param user_profile: User profile.
+    :param mode: Aggregation function.
     :return: Number from [0, 1], where 0 means items aren't novel, 1 items are novel.
     """
-    return np.mean(cosine_distances(recommendations, user_profile), axis=1)
+    return mode(cosine_distances(recommendations, user_profile), axis=1)
 
 
 def unexpectedness(recommendations, primitive_recommendations):
     return np.array([~np.isin(recommendations, row) for row in primitive_recommendations]).mean(axis=0)
 
 
-def relevance(recommendations, user_profile):
+def relevance(recommendations, user_profile, mode=np.mean):
     """
     Calculates relevance of recommendation for user with profile `user_profile`.
     :param recommendations: Recommendations as embeddings.
     :param user_profile: User profile.
+    :param mode: Aggregation function.
     :return: Number from [0, 1], where 0 means items aren't relevant, 1 items are relevant.
     """
-    return np.mean(cosine_similarity(recommendations, user_profile), axis=1)
+    return mode(cosine_similarity(recommendations, user_profile), axis=1)
 
 
 # TODO coefs
@@ -63,7 +65,7 @@ def serendipity(items, recommendations, primitive_recommendations, user_profile,
     :param beta: Weight of unexpectedness.
     :param gamma: Weight of relevance.
     :param keepdims: Return score for each entry when True, return mean score otherwise.
-    :param verbose: Prints intermediate results if set to True, doesn't otherwise.
+    :param verbose: Print intermediate results if set to True, doesn't otherwise.
     :return: A number from [0, 1] interval. 1 is a maximum, 0 is a minimum.
     """
     assert alpha + beta + gamma == 1, 'The sum of coefficients isn\'t equal to 1'
