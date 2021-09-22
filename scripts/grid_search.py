@@ -27,8 +27,8 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 models = {
     'KNNpopularity': KNNpopularity,
-    # 'MatrixFactorization': MatrixFactorization,
-    # 'AutoRec': AutoRec
+    'MatrixFactorization': MatrixFactorization,
+    'AutoRec': AutoRec
 }
 
 args = parse_args()
