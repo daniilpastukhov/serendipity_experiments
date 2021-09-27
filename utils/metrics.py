@@ -2,38 +2,13 @@ from typing import Union, List, Callable
 
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity, cosine_distances
-from scipy.spatial.distance import cosine
-
-
-def similarity(i: Union[List, np.ndarray],
-               j: Union[List, np.ndarray]):
-    """
-    Calculates similarity between two items.
-    :param i: First item (one-hot vector).
-    :param j: Second item (one-hot vector).
-    :return: Number from [0, 1], where 0 means items are completely different, 1 items are the same.
-    """
-    # return (cosine_similarity([i], [j])[0] + 1) / 2  # map range from [-1, 1] to [0, 1]
-    res = 1.0 - cosine(i, j)
-    return res if not np.isnan(res) else 0
-
-
-def distance(i: Union[List, np.ndarray],
-             j: Union[List, np.ndarray]):
-    """
-    Calculates distance between two items.
-    :param i: First item (one-hot vector).
-    :param j: Second item (one-hot vector).
-    :return: Number from [0, 1], where 0 means items are the same, 1 items are completely different.
-    """
-    return 1.0 - similarity(i, j)
 
 
 def novelty(recommendations: Union[List, np.ndarray],
             user_profile: Union[List, np.ndarray],
-            mode: Callable = np.mean):
+            mode: Callable = np.mean) -> np.ndarray:
     """
-    Calculates novelty of recommendation for user with profile `user_profile`.
+    Calculates novelty of recommendations for user with profile `user_profile`.
     :param recommendations: Recommendations as embeddings.
     :param user_profile: User profile.
     :param mode: Aggregation function.
@@ -43,15 +18,21 @@ def novelty(recommendations: Union[List, np.ndarray],
 
 
 def unexpectedness(recommendations: Union[List, np.ndarray],
-                   primitive_recommendations: Union[List, np.ndarray]):
+                   primitive_recommendations: Union[List, np.ndarray]) -> np.ndarray:
+    """
+    Calculates unexpectedness of recommendations for user with profile `user_profile`.
+    :param recommendations: Recommendations as item indices.
+    :param primitive_recommendations: Primitive recommendations as item indices.
+    :return:
+    """
     return np.array([~np.isin(recommendations, row) for row in primitive_recommendations]).mean(axis=0)
 
 
 def relevance(recommendations: Union[List, np.ndarray],
               user_profile: Union[List, np.ndarray],
-              mode: Callable = np.mean):
+              mode: Callable = np.mean) -> np.ndarray:
     """
-    Calculates relevance of recommendation for user with profile `user_profile`.
+    Calculates relevance of recommendations for user with profile `user_profile`.
     :param recommendations: Recommendations as embeddings.
     :param user_profile: User profile.
     :param mode: Aggregation function.
@@ -65,9 +46,9 @@ def serendipity(items: Union[List, np.ndarray],
                 primitive_recommendations: Union[List, np.ndarray],
                 user_profile: Union[List, np.ndarray],
                 keepdims: bool = False,
-                verbose: bool = False):
+                verbose: bool = False) -> Union[int, np.ndarray]:
     """
-    Serendipity of recommendation list.
+    Calculate the serendipity of recommendation list.
 
     :param items: Recommended items as one-hot encoded vectors.
     :param recommendations: Recommendation's id list.
@@ -78,7 +59,7 @@ def serendipity(items: Union[List, np.ndarray],
     :return: A number from [0, 1] interval. 1 is a maximum, 0 is a minimum.
     """
 
-    _novelty = novelty(items, user_profile)
+    _novelty = novelty(items, user_profile, mode=np.min)
     _unexpectedness = unexpectedness(recommendations, primitive_recommendations)
     _relevance = relevance(items, user_profile)
 
@@ -88,4 +69,4 @@ def serendipity(items: Union[List, np.ndarray],
     if keepdims:
         return _novelty + _relevance + np.mean(_unexpectedness)
     else:
-        return np.mean(np.mean(_novelty) + np.mean(_relevance) + np.mean(_unexpectedness))
+        return np.mean(np.vstack((_novelty, _relevance, _unexpectedness)), axis=(0, 1))

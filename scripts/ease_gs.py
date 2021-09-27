@@ -68,8 +68,7 @@ def evaluate():
 
         serendipity_results.append(
             serendipity(recommended_items, prediction,
-                        primitive_predictions, user_profile,
-                        gamma=args.gamma, alpha=args.alpha, beta=args.beta)
+                        primitive_predictions, user_profile)
         )
 
     if total_recommendations > 0:

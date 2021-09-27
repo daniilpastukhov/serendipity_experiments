@@ -36,7 +36,7 @@ args = parse_args()
 init_logging('gs.log', path=args.save_path)
 
 # Datasets
-DATASET = '1m'
+DATASET = '10m'
 DATA_PATH = 'data/movielens/' + DATASET + '/clean/'
 
 ratings = pd.read_csv(DATA_PATH + 'ratings.csv')
@@ -115,8 +115,7 @@ def evaluate(model, data):
 
         ser.append(
             serendipity(recommended_items_embeddings, prediction,
-                        primitive_recommendations[user_id], user_embeddings[user_id],
-                        gamma=args.gamma, alpha=args.alpha, beta=args.beta)
+                        primitive_recommendations[user_id], user_embeddings[user_id])
         )
 
     if total_recommendations > 0:

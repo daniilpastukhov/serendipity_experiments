@@ -1,4 +1,4 @@
-genres_cols = [f'feature{i + 1}' for i in range(18)]
+genres_cols = [f'feature{i + 1}' for i in range(20)]
 
 
 def get_movies_by_profile(movies_df, profile):
