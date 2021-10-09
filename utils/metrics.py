@@ -17,22 +17,13 @@ def novelty(recommendations: Union[List, np.ndarray],
     return mode(cosine_distances(recommendations, user_profile), axis=1)
 
 
-def unexpectedness(recommendations: Union[List, np.ndarray],
-                   primitive_recommendations: Union[List, np.ndarray]) -> np.ndarray:
-    """
-    Calculates unexpectedness of recommendations for user with profile `user_profile`.
-    :param recommendations: Recommendations as item indices.
-    :param primitive_recommendations: Primitive recommendations as item indices.
-    :return:
-    """
-    return np.array([~np.isin(recommendations, row) for row in primitive_recommendations]).mean(axis=0)
+def unexpectedness(recommendations, primitive_recommendations):
+    return np.array([~np.isin(recommendations, primitive_recommendations) for primitive_recommendations in primitive_recommendations]).mean(axis=0)
 
 
-def relevance(recommendations: Union[List, np.ndarray],
-              user_profile: Union[List, np.ndarray],
-              mode: Callable = np.mean) -> np.ndarray:
+def relevance(recommendations, user_profile, mode=np.mean):
     """
-    Calculates relevance of recommendations for user with profile `user_profile`.
+    Calculates relevance of recommendation for user with profile `user_profile`.
     :param recommendations: Recommendations as embeddings.
     :param user_profile: User profile.
     :param mode: Aggregation function.
@@ -61,7 +52,7 @@ def serendipity(items: Union[List, np.ndarray],
 
     _novelty = novelty(items, user_profile, mode=np.min)
     _unexpectedness = unexpectedness(recommendations, primitive_recommendations)
-    _relevance = relevance(items, user_profile)
+    _relevance = 0  # relevance(items, user_profile)
 
     if verbose:
         print('Novelty: {}, relevance: {}, unexp: {}'.format(_novelty, _relevance, _unexpectedness))

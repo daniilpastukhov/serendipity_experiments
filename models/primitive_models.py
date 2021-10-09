@@ -1,23 +1,35 @@
+from sklearn.model_selection import ParameterGrid
+
 from models.simple_knn import KNN
 from models.knn_popular_optimized import KNNpopularity
 from models.mf_optimized import MatrixFactorization
 from models.autorec import AutoRec
 
 
+models = {
+    'KNNpopularity': KNNpopularity,
+    'KNN': KNN,
+    'MatrixFactorization': MatrixFactorization,
+    'AutoRec': AutoRec
+}
+
+
 class PrimitiveModels:
     def __init__(self, train_data, ratings, item_ratings):
-        self.primitive_models = [
-            KNN('KNN', train_data, ratings),
-            KNNpopularity('KNNpopularity', train_data, item_ratings),
-            MatrixFactorization('MatrixFactorization', train_data, item_ratings),
-            AutoRec('AutoRec', train_data, item_ratings)
-        ]
+        self.primitive_models = []
+
+        self.models = {
+            'KNNpopularity': KNNpopularity('KNNpopularity', train_data, item_ratings),
+            'KNN': KNN('KNN', train_data, ratings),
+            'MatrixFactorization': MatrixFactorization('MatrixFactorization', train_data, item_ratings),
+            'AutoRec': AutoRec('AutoRec', train_data, item_ratings)
+        }
 
         self.primitive_grid = {
-            'AutoRec': {'hidden_layer_size': 128, 'random_state': 100},
-            'KNN': {'k': 5},
-            'KNNpopularity': {'k': 5},
-            'MatrixFactorization': {'n_components': 100, 'random_state': 42},
+            'AutoRec': {'hidden_layer_size': [8, 16, 64, 128, 192, 256, 384, 512, 768, 1024, 1536, 2048], 'random_state': [11, 42, 77]},
+            'KNNpopularity': {'k': [5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100, 300, 500, 700, 1000]},
+            'MatrixFactorization': {'n_components': [5, 10, 20, 50, 100, 200, 500, 1000, 2000], 'random_state': [42]},
+            'KNN': {'k': [5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100, 300, 500, 700, 1000]}
         }
 
         self.prepare()
@@ -28,8 +40,12 @@ class PrimitiveModels:
 
         :return: None.
         """
-        for m in self.primitive_models:
-            m.fit(self.primitive_grid[m.name])
+        for model_name in models:
+            for grid in ParameterGrid(self.primitive_grid[model_name]):
+                self.primitive_models.append(self.models[model_name])
+                self.primitive_models[-1].fit(grid)
+
+        print(f'Total {len(self.primitive_models)} primitive models.')
 
     def predict(self, user_profile, n):
         """

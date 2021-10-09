@@ -14,7 +14,7 @@ class MatrixFactorization:
         self.users_amount = len(train_data)
         self.train_data_sparse = csr_matrix(self.train_data.values)
         self.item_ratings = item_ratings
-        self.beta = 1.0
+        self.beta = 0.0
 
         self.SVD = None
         self.matrix = None
@@ -61,7 +61,7 @@ class MatrixFactorization:
         for i in range(len(popular_items)):
             scores.loc[popular_items[i]] += popular_items_score[i]
 
-        final_score = scores / self.item_ratings.sort_values(by='movieId')['sum_rating'].values
+        final_score = scores / (self.item_ratings.sort_values(by='movieId')['sum_rating'].values ** self.beta)
         final_score = final_score.loc[~final_score.index.isin(user_rated_items)]
         final_score.dropna(inplace=True)
         final_score = final_score[final_score != 0]

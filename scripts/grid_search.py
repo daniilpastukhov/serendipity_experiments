@@ -15,7 +15,7 @@ from models.knn_popular_optimized import KNNpopularity
 from models.mf_optimized import MatrixFactorization
 from models.autorec import AutoRec
 
-from utils.metrics import serendipity
+from utils.metrics import serendipity, unexpectedness, relevance
 from utils.helpers import get_movies_by_ids, get_control_items, get_movies_by_profile
 from utils.parser import parse_args
 from utils.logging import init_logging
@@ -36,7 +36,7 @@ args = parse_args()
 init_logging('gs.log', path=args.save_path)
 
 # Datasets
-DATASET = '10m'
+DATASET = '1m'
 DATA_PATH = 'data/movielens/' + DATASET + '/clean/'
 
 ratings = pd.read_csv(DATA_PATH + 'ratings.csv')
@@ -74,11 +74,14 @@ def grid_search(model_name, grid, data):
         model.fit(params)
         start_time = time.time()
         logging.debug('Started {}, {}'.format(model_name, params))
-        recall, coverage, ser = evaluate(model, test_data)
-        logging.debug('Recall: {}, coverage: {}, serendipity: {}'.format(recall, coverage, ser))
+        recall, coverage, nov, unexp, rel = evaluate(model, test_data)
+        logging.debug(
+            'Recall: {}, coverage: {}, novelty: {}, unexpectedness: {}, relevance: {}'
+                .format(recall, coverage, np.mean(nov), np.mean(unexp), np.mean(rel))
+        )
         logging.debug('Finished {}, {}'.format(model_name, params))
         time_elapsed = time.time() - start_time
-        history.append((params, recall, coverage, ser, time_elapsed))
+        history.append((params, recall, coverage, nov, unexp, rel, time_elapsed))
 
     return history
 
@@ -93,9 +96,11 @@ def evaluate(model, data):
     """
     hit = 0  # used for recall calculation
     total_recommendations = 0
+    recommendations = []
     all_recommendations = []  # used for coverage calculation
-
-    ser = []
+    rel = []
+    unexp = []
+    nov = []
 
     for user_id, user_profile in tqdm(data.iterrows(), total=len(data)):
         prediction = model.predict(user_profile, n)
@@ -105,6 +110,7 @@ def evaluate(model, data):
         if control_items[user_id] in prediction:  # if prediction contains control item increase hit counter
             hit += 1
 
+        recommendations.append(prediction)
         all_recommendations.extend(list(prediction))
         total_recommendations += 1
 
@@ -113,18 +119,29 @@ def evaluate(model, data):
         if len(user_profile) == 0:  # check if user profile is empty
             continue
 
-        ser.append(
-            serendipity(recommended_items_embeddings, prediction,
-                        primitive_recommendations[user_id], user_embeddings[user_id])
-        )
+        rel.append(relevance(recommended_items_embeddings, user_embeddings[user_id]))
+        unexp.append(unexpectedness(prediction, primitive_recommendations[user_id]))
 
     if total_recommendations > 0:
         recall = hit / total_recommendations
     else:
         recall = 0
 
+    recommendations = np.array(recommendations)
+    # calculate novelty of each item
+    movies_nov = pd.Series(np.zeros(len(test_data.columns)), index=test_data.columns, dtype=np.float32)
+    for movie_id in test_data.columns:
+        recommended_fraction = (recommendations == int(movie_id)).sum()
+        not_interacted_fraction = (test_data[movie_id] == 0).sum() + 1e-10
+        movies_nov[movies_nov.index == movie_id] = 1 - (recommended_fraction / not_interacted_fraction)
+
+    movies_nov = (movies_nov - movies_nov.min()) / (movies_nov.max() - movies_nov.min())  # min-max scaling
+
+    for recommendation in recommendations:
+        nov.append(movies_nov[movies_nov.index.astype(int).isin(recommendation)].mean())
+
     coverage = np.unique(all_recommendations).shape[0] / model.train_data.shape[1]
-    return recall, coverage, np.mean(ser)
+    return recall, coverage, nov, unexp, rel
 
 
 params_grid = {
