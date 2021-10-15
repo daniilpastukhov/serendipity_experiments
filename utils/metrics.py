@@ -17,8 +17,11 @@ def novelty(recommendations: Union[List, np.ndarray],
     return mode(cosine_distances(recommendations, user_profile), axis=1)
 
 
-def unexpectedness(recommendations, primitive_recommendations):
-    return np.array([~np.isin(recommendations, primitive_recommendations) for primitive_recommendations in primitive_recommendations]).mean(axis=0)
+def unexpectedness(recommendations, primitive_recommendations, ignore_model=None):
+    if ignore_model:
+        return np.array([~np.isin(recommendations, np.unique(np.array(primitive_recommendations)[~ignore_model]))]).mean()
+
+    return np.array([~np.isin(recommendations, primitive_recommendations)]).mean()
 
 
 def relevance(recommendations, user_profile, mode=np.mean):

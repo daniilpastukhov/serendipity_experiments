@@ -26,9 +26,9 @@ np.random.seed(42)
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 models = {
+    'AutoRec': AutoRec,
     'KNNpopularity': KNNpopularity,
     'MatrixFactorization': MatrixFactorization,
-    'AutoRec': AutoRec
 }
 
 args = parse_args()
@@ -54,34 +54,39 @@ logging.info('Dataset: ' + DATASET)
 
 item_ratings = load(DATA_PATH + 'item_sum_dif_rating.pickle')
 
-primitive_models = PrimitiveModels(train_data, ratings, item_ratings)
 n = 10  # number of recommendations for each user
 
 primitive_recommendations = None
 
 if not os.path.isfile('cache/primitive_recommendations.joblib'):
+    primitive_models = PrimitiveModels(train_data, ratings, item_ratings)
     primitive_recommendations = primitive_models.make_recommendations(test_data, n)
     dump(primitive_recommendations, 'cache/primitive_recommendations.joblib')
 else:
     primitive_recommendations = load('cache/primitive_recommendations.joblib')
 
+model_i = 0
+
 
 def grid_search(model_name, grid, data):
+    global model_i
     history = []
 
     for params in ParameterGrid(grid):
         model = models[model_name](model_name, data, item_ratings)
         model.fit(params)
         start_time = time.time()
-        logging.debug('Started {}, {}'.format(model_name, params))
+        logging.debug(f'Started {model_name}, {params}')
         recall, coverage, nov, unexp, rel = evaluate(model, test_data)
-        logging.debug(
-            'Recall: {}, coverage: {}, novelty: {}, unexpectedness: {}, relevance: {}'
-                .format(recall, coverage, np.mean(nov), np.mean(unexp), np.mean(rel))
-        )
-        logging.debug('Finished {}, {}'.format(model_name, params))
+        logging.debug(f'Recall: {recall},'
+                      f'coverage: {coverage},'
+                      f'novelty: {np.mean(nov)},'
+                      f'unexpectedness: {np.mean(unexp)},'
+                      f'relevance: {np.mean(rel)}')
+        logging.debug(f'Finished {model_name}, {params}')
         time_elapsed = time.time() - start_time
         history.append((params, recall, coverage, nov, unexp, rel, time_elapsed))
+        model_i += 1
 
     return history
 
@@ -120,7 +125,7 @@ def evaluate(model, data):
             continue
 
         rel.append(relevance(recommended_items_embeddings, user_embeddings[user_id]))
-        unexp.append(unexpectedness(prediction, primitive_recommendations[user_id]))
+        unexp.append(unexpectedness(prediction, primitive_recommendations[user_id], model_i))
 
     if total_recommendations > 0:
         recall = hit / total_recommendations

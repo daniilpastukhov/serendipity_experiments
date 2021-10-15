@@ -117,11 +117,11 @@ for user_id, user_profile in test_data.iterrows():
 primitive_models = PrimitiveModels(train_data, ratings, item_ratings)
 n = 10  # number of recommendations for each user
 
-if not os.path.isfile('cache/primitive_recommendations.joblib'):
+if not os.path.isfile('cache/primitive_recommendations_bad.joblib'):
     primitive_recommendations = primitive_models.make_recommendations(test_data, n)
-    dump(primitive_recommendations, 'cache/primitive_recommendations.joblib')
+    dump(primitive_recommendations, 'cache/primitive_recommendations_bad.joblib')
 else:
-    primitive_recommendations = load('cache/primitive_recommendations.joblib')
+    primitive_recommendations = load('cache/primitive_recommendations_bad.joblib')
 
 params = [1.0, 10.0, 50.0, 100.0, 250.0, 500.0, 750.0, 1000.0, 2000.0, 5000.0, 10000.0]
 param = None
