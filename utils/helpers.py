@@ -1,3 +1,7 @@
+from typing import Union
+import numpy as np
+import pandas as pd
+
 genres_cols = [f'feature{i + 1}' for i in range(18)]
 
 
@@ -49,3 +53,7 @@ def get_user_profiles(data):
     user_profiles = data.pivot_table(index=['userId'], columns=['movieId'], values='rating')
     user_profiles.fillna(0, inplace=True)
     return user_profiles
+
+
+def minmaxscaling(x: Union[np.ndarray, pd.Series]):
+    return (x - x.min()) / (x.max() - x.min())

@@ -37,7 +37,7 @@ def novelty(recommendations, user_profile, mode=np.mean):
 
 
 def unexpectedness(recommendations, primitive_recommendations):
-    return np.array([~np.isin(recommendations, row) for row in primitive_recommendations]).mean(axis=0)
+    return np.array([~np.isin(recommendations, primitive_recommendations)]).mean()
 
 
 def relevance(recommendations, user_profile, mode=np.mean):
