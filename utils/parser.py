@@ -41,7 +41,7 @@ def parse_args():
         '--pop_size',
         help='Population size',
         type=int,
-        default=7
+        default=10
     )
     parser.add_argument(
         '--n_gen',

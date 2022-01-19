@@ -1,0 +1,193 @@
+[2021-10-14 23:31:30,566] INFO  Dataset: 1m
+[2021-10-15 03:07:40,931] INFO  Grid search started: AutoRec
+[2021-10-15 03:07:52,086] DEBUG  Started AutoRec, {'hidden_layer_size': 8, 'random_state': 11}
+[2021-10-15 03:08:36,102] DEBUG  Recall: 0.02152317880794702,coverage: 0.019427954668105773,novelty: 0.3127259910106659,unexpectedness: 0.0020695364238410598,relevance: 0.25211740486341283
+[2021-10-15 03:08:36,103] DEBUG  Finished AutoRec, {'hidden_layer_size': 8, 'random_state': 11}
+[2021-10-15 03:08:46,016] DEBUG  Started AutoRec, {'hidden_layer_size': 8, 'random_state': 42}
+[2021-10-15 03:09:29,610] DEBUG  Recall: 0.019867549668874173,coverage: 0.008634646519158122,novelty: 0.33939194679260254,unexpectedness: 0.9452814569536424,relevance: 0.25610786217064474
+[2021-10-15 03:09:29,619] DEBUG  Finished AutoRec, {'hidden_layer_size': 8, 'random_state': 42}
+[2021-10-15 03:09:40,414] DEBUG  Started AutoRec, {'hidden_layer_size': 8, 'random_state': 77}
+[2021-10-15 03:10:23,778] DEBUG  Recall: 0.023178807947019868,coverage: 0.005666486778197518,novelty: 0.30577078461647034,unexpectedness: 0.9415562913907286,relevance: 0.2544769669942823
+[2021-10-15 03:10:23,778] DEBUG  Finished AutoRec, {'hidden_layer_size': 8, 'random_state': 77}
+[2021-10-15 03:10:32,617] DEBUG  Started AutoRec, {'hidden_layer_size': 16, 'random_state': 11}
+[2021-10-15 03:11:15,897] DEBUG  Recall: 0.018211920529801324,coverage: 0.044522396114409064,novelty: 0.44312170147895813,unexpectedness: 0.9420529801324503,relevance: 0.26111222627698494
+[2021-10-15 03:11:15,897] DEBUG  Finished AutoRec, {'hidden_layer_size': 16, 'random_state': 11}
+[2021-10-15 03:11:24,011] DEBUG  Started AutoRec, {'hidden_layer_size': 16, 'random_state': 42}
+[2021-10-15 03:12:08,417] DEBUG  Recall: 0.019867549668874173,coverage: 0.04263356718834323,novelty: 0.3692646026611328,unexpectedness: 0.9442052980132452,relevance: 0.2571834010956369
+[2021-10-15 03:12:08,417] DEBUG  Finished AutoRec, {'hidden_layer_size': 16, 'random_state': 42}
+[2021-10-15 03:12:17,444] DEBUG  Started AutoRec, {'hidden_layer_size': 16, 'random_state': 77}
+[2021-10-15 03:13:00,791] DEBUG  Recall: 0.018211920529801324,coverage: 0.03291958985429034,novelty: 0.3857951760292053,unexpectedness: 0.9377483443708609,relevance: 0.2636572728468042
+[2021-10-15 03:13:00,792] DEBUG  Finished AutoRec, {'hidden_layer_size': 16, 'random_state': 77}
+[2021-10-15 03:13:12,602] DEBUG  Started AutoRec, {'hidden_layer_size': 64, 'random_state': 11}
+[2021-10-15 03:13:56,032] DEBUG  Recall: 0.024834437086092714,coverage: 0.031570426335671885,novelty: 0.6369176506996155,unexpectedness: 0.9538907284768213,relevance: 0.3233947145550145
+[2021-10-15 03:13:56,032] DEBUG  Finished AutoRec, {'hidden_layer_size': 64, 'random_state': 11}
+[2021-10-15 03:14:07,553] DEBUG  Started AutoRec, {'hidden_layer_size': 64, 'random_state': 42}
+[2021-10-15 03:14:51,036] DEBUG  Recall: 0.01903973509933775,coverage: 0.033189422558014034,novelty: 0.6186747550964355,unexpectedness: 0.9480960264900664,relevance: 0.32226962137547066
+[2021-10-15 03:14:51,036] DEBUG  Finished AutoRec, {'hidden_layer_size': 64, 'random_state': 42}
+[2021-10-15 03:15:02,660] DEBUG  Started AutoRec, {'hidden_layer_size': 64, 'random_state': 77}
+[2021-10-15 03:15:45,870] DEBUG  Recall: 0.028145695364238412,coverage: 0.03453858607663249,novelty: 0.6361080408096313,unexpectedness: 0.9447847682119205,relevance: 0.3242125188919482
+[2021-10-15 03:15:45,870] DEBUG  Finished AutoRec, {'hidden_layer_size': 64, 'random_state': 77}
+[2021-10-15 03:15:56,518] DEBUG  Started AutoRec, {'hidden_layer_size': 128, 'random_state': 11}
+[2021-10-15 03:16:40,005] DEBUG  Recall: 0.022350993377483443,coverage: 0.04937938478143551,novelty: 0.6650980114936829,unexpectedness: 0.9471026490066224,relevance: 0.32816862777858885
+[2021-10-15 03:16:40,005] DEBUG  Finished AutoRec, {'hidden_layer_size': 128, 'random_state': 11}
+[2021-10-15 03:16:51,063] DEBUG  Started AutoRec, {'hidden_layer_size': 128, 'random_state': 42}
+[2021-10-15 03:17:34,309] DEBUG  Recall: 0.022350993377483443,coverage: 0.05531570426335672,novelty: 0.6877605319023132,unexpectedness: 0.9545529801324503,relevance: 0.3360025079089501
+[2021-10-15 03:17:34,309] DEBUG  Finished AutoRec, {'hidden_layer_size': 128, 'random_state': 42}
+[2021-10-15 03:17:44,521] DEBUG  Started AutoRec, {'hidden_layer_size': 128, 'random_state': 77}
+[2021-10-15 03:18:28,171] DEBUG  Recall: 0.024834437086092714,coverage: 0.04695089044792229,novelty: 0.6586549282073975,unexpectedness: 0.9480132450331126,relevance: 0.33077446407419725
+[2021-10-15 03:18:28,172] DEBUG  Finished AutoRec, {'hidden_layer_size': 128, 'random_state': 77}
+[2021-10-15 03:18:40,696] DEBUG  Started AutoRec, {'hidden_layer_size': 192, 'random_state': 11}
+[2021-10-15 03:19:24,011] DEBUG  Recall: 0.029801324503311258,coverage: 0.06314085267134377,novelty: 0.7114757895469666,unexpectedness: 0.9506622516556292,relevance: 0.3418293493818442
+[2021-10-15 03:19:24,012] DEBUG  Finished AutoRec, {'hidden_layer_size': 192, 'random_state': 11}
+[2021-10-15 03:19:35,638] DEBUG  Started AutoRec, {'hidden_layer_size': 192, 'random_state': 42}
+[2021-10-15 03:20:19,199] DEBUG  Recall: 0.028145695364238412,coverage: 0.058014031300593634,novelty: 0.6918207406997681,unexpectedness: 0.9507450331125827,relevance: 0.337693599631636
+[2021-10-15 03:20:19,199] DEBUG  Finished AutoRec, {'hidden_layer_size': 192, 'random_state': 42}
+[2021-10-15 03:20:31,038] DEBUG  Started AutoRec, {'hidden_layer_size': 192, 'random_state': 77}
+[2021-10-15 03:21:14,296] DEBUG  Recall: 0.020695364238410598,coverage: 0.06475984889368591,novelty: 0.714730978012085,unexpectedness: 0.9512417218543048,relevance: 0.3423303177572848
+[2021-10-15 03:21:14,296] DEBUG  Finished AutoRec, {'hidden_layer_size': 192, 'random_state': 77}
+[2021-10-15 03:21:26,307] DEBUG  Started AutoRec, {'hidden_layer_size': 256, 'random_state': 11}
+[2021-10-15 03:22:09,580] DEBUG  Recall: 0.019867549668874173,coverage: 0.06583917970858068,novelty: 0.7166627645492554,unexpectedness: 0.9460264900662253,relevance: 0.34295020930914016
+[2021-10-15 03:22:09,581] DEBUG  Finished AutoRec, {'hidden_layer_size': 256, 'random_state': 11}
+[2021-10-15 03:22:22,441] DEBUG  Started AutoRec, {'hidden_layer_size': 256, 'random_state': 42}
+[2021-10-15 03:23:05,739] DEBUG  Recall: 0.024834437086092714,coverage: 0.06556934700485699,novelty: 0.7192258238792419,unexpectedness: 0.8487582781456955,relevance: 0.3453158909965831
+[2021-10-15 03:23:05,740] DEBUG  Finished AutoRec, {'hidden_layer_size': 256, 'random_state': 42}
+[2021-10-15 03:23:18,430] DEBUG  Started AutoRec, {'hidden_layer_size': 256, 'random_state': 77}
+[2021-10-15 03:24:01,788] DEBUG  Recall: 0.020695364238410598,coverage: 0.07204533189422559,novelty: 0.7201797962188721,unexpectedness: 0.8509105960264901,relevance: 0.34375775758078314
+[2021-10-15 03:24:01,789] DEBUG  Finished AutoRec, {'hidden_layer_size': 256, 'random_state': 77}
+[2021-10-15 03:24:16,428] DEBUG  Started AutoRec, {'hidden_layer_size': 384, 'random_state': 11}
+[2021-10-15 03:24:59,918] DEBUG  Recall: 0.024006622516556293,coverage: 0.06691851052347544,novelty: 0.7276402115821838,unexpectedness: 0.846771523178808,relevance: 0.3421303582107724
+[2021-10-15 03:24:59,919] DEBUG  Finished AutoRec, {'hidden_layer_size': 384, 'random_state': 11}
+[2021-10-15 03:25:15,833] DEBUG  Started AutoRec, {'hidden_layer_size': 384, 'random_state': 42}
+[2021-10-15 03:25:58,989] DEBUG  Recall: 0.027317880794701987,coverage: 0.06880733944954129,novelty: 0.7384152412414551,unexpectedness: 0.8580298013245033,relevance: 0.3472727807909552
+[2021-10-15 03:25:58,989] DEBUG  Finished AutoRec, {'hidden_layer_size': 384, 'random_state': 42}
+[2021-10-15 03:26:12,069] DEBUG  Started AutoRec, {'hidden_layer_size': 384, 'random_state': 77}
+[2021-10-15 03:26:55,628] DEBUG  Recall: 0.020695364238410598,coverage: 0.0650296815974096,novelty: 0.7115727066993713,unexpectedness: 0.8560430463576159,relevance: 0.34087402156086705
+[2021-10-15 03:26:55,628] DEBUG  Finished AutoRec, {'hidden_layer_size': 384, 'random_state': 77}
+[2021-10-15 03:27:06,299] DEBUG  Started AutoRec, {'hidden_layer_size': 512, 'random_state': 11}
+[2021-10-15 03:27:49,733] DEBUG  Recall: 0.02152317880794702,coverage: 0.013491635186184566,novelty: 0.4952503740787506,unexpectedness: 0.8668046357615893,relevance: 0.28843694742130455
+[2021-10-15 03:27:49,733] DEBUG  Finished AutoRec, {'hidden_layer_size': 512, 'random_state': 11}
+[2021-10-15 03:28:00,782] DEBUG  Started AutoRec, {'hidden_layer_size': 512, 'random_state': 42}
+[2021-10-15 03:28:44,151] DEBUG  Recall: 0.020695364238410598,coverage: 0.023745277927684834,novelty: 0.5756745934486389,unexpectedness: 0.8375827814569538,relevance: 0.29871275788554374
+[2021-10-15 03:28:44,151] DEBUG  Finished AutoRec, {'hidden_layer_size': 512, 'random_state': 42}
+[2021-10-15 03:28:55,365] DEBUG  Started AutoRec, {'hidden_layer_size': 512, 'random_state': 77}
+[2021-10-15 03:29:38,735] DEBUG  Recall: 0.01903973509933775,coverage: 0.019427954668105773,novelty: 0.5500317215919495,unexpectedness: 0.8274006622516556,relevance: 0.2926310849587567
+[2021-10-15 03:29:38,735] DEBUG  Finished AutoRec, {'hidden_layer_size': 512, 'random_state': 77}
+[2021-10-15 03:29:55,433] DEBUG  Started AutoRec, {'hidden_layer_size': 768, 'random_state': 11}
+[2021-10-15 03:30:38,912] DEBUG  Recall: 0.024006622516556293,coverage: 0.04074473826227739,novelty: 0.6584296822547913,unexpectedness: 0.8147350993377483,relevance: 0.3212498636882956
+[2021-10-15 03:30:38,912] DEBUG  Finished AutoRec, {'hidden_layer_size': 768, 'random_state': 11}
+[2021-10-15 03:30:47,945] DEBUG  Started AutoRec, {'hidden_layer_size': 768, 'random_state': 42}
+[2021-10-15 03:31:31,554] DEBUG  Recall: 0.01903973509933775,coverage: 0.0059363194819212085,novelty: 0.3232142925262451,unexpectedness: 0.6001655629139073,relevance: 0.2573855521247072
+[2021-10-15 03:31:31,555] DEBUG  Finished AutoRec, {'hidden_layer_size': 768, 'random_state': 42}
+[2021-10-15 03:31:40,098] DEBUG  Started AutoRec, {'hidden_layer_size': 768, 'random_state': 77}
+[2021-10-15 03:32:24,455] DEBUG  Recall: 0.01903973509933775,coverage: 0.007015650296815974,novelty: 0.31116971373558044,unexpectedness: 0.6763245033112583,relevance: 0.25777537624038227
+[2021-10-15 03:32:24,455] DEBUG  Finished AutoRec, {'hidden_layer_size': 768, 'random_state': 77}
+[2021-10-15 03:32:33,305] DEBUG  Started AutoRec, {'hidden_layer_size': 1024, 'random_state': 11}
+[2021-10-15 03:33:16,891] DEBUG  Recall: 0.023178807947019868,coverage: 0.006745817593092283,novelty: 0.2893446981906891,unexpectedness: 0.6627483443708609,relevance: 0.2549276641746353
+[2021-10-15 03:33:16,891] DEBUG  Finished AutoRec, {'hidden_layer_size': 1024, 'random_state': 11}
+[2021-10-15 03:33:35,576] DEBUG  Started AutoRec, {'hidden_layer_size': 1024, 'random_state': 42}
+[2021-10-15 03:34:18,942] DEBUG  Recall: 0.028973509933774833,coverage: 0.04533189422558014,novelty: 0.7003253698348999,unexpectedness: 0.7550496688741722,relevance: 0.3271551245329199
+[2021-10-15 03:34:18,943] DEBUG  Finished AutoRec, {'hidden_layer_size': 1024, 'random_state': 42}
+[2021-10-15 03:34:27,568] DEBUG  Started AutoRec, {'hidden_layer_size': 1024, 'random_state': 77}
+[2021-10-15 03:35:10,965] DEBUG  Recall: 0.02152317880794702,coverage: 0.005396654074473826,novelty: 0.279168039560318,unexpectedness: 0.7721854304635761,relevance: 0.2559770274822166
+[2021-10-15 03:35:10,965] DEBUG  Finished AutoRec, {'hidden_layer_size': 1024, 'random_state': 77}
+[2021-10-15 03:35:19,858] DEBUG  Started AutoRec, {'hidden_layer_size': 1536, 'random_state': 11}
+[2021-10-15 03:36:03,396] DEBUG  Recall: 0.023178807947019868,coverage: 0.0059363194819212085,novelty: 0.28576746582984924,unexpectedness: 0.768046357615894,relevance: 0.25186372791642786
+[2021-10-15 03:36:03,396] DEBUG  Finished AutoRec, {'hidden_layer_size': 1536, 'random_state': 11}
+[2021-10-15 03:36:12,355] DEBUG  Started AutoRec, {'hidden_layer_size': 1536, 'random_state': 42}
+[2021-10-15 03:36:55,796] DEBUG  Recall: 0.018211920529801324,coverage: 0.005666486778197518,novelty: 0.3132525682449341,unexpectedness: 0.7624172185430463,relevance: 0.25379716675032704
+[2021-10-15 03:36:55,797] DEBUG  Finished AutoRec, {'hidden_layer_size': 1536, 'random_state': 42}
+[2021-10-15 03:37:13,057] DEBUG  Started AutoRec, {'hidden_layer_size': 1536, 'random_state': 77}
+[2021-10-15 03:37:56,544] DEBUG  Recall: 0.02566225165562914,coverage: 0.04371289800323799,novelty: 0.6963704228401184,unexpectedness: 0.7793874172185431,relevance: 0.32790405793634164
+[2021-10-15 03:37:56,544] DEBUG  Finished AutoRec, {'hidden_layer_size': 1536, 'random_state': 77}
+[2021-10-15 03:38:12,903] DEBUG  Started AutoRec, {'hidden_layer_size': 2048, 'random_state': 11}
+[2021-10-15 03:38:56,582] DEBUG  Recall: 0.020695364238410598,coverage: 0.039665407447382624,novelty: 0.6695957779884338,unexpectedness: 0.7770695364238411,relevance: 0.31795226552881395
+[2021-10-15 03:38:56,583] DEBUG  Finished AutoRec, {'hidden_layer_size': 2048, 'random_state': 11}
+[2021-10-15 03:39:05,655] DEBUG  Started AutoRec, {'hidden_layer_size': 2048, 'random_state': 42}
+[2021-10-15 03:39:50,496] DEBUG  Recall: 0.019867549668874173,coverage: 0.005396654074473826,novelty: 0.27552223205566406,unexpectedness: 0.7880794701986755,relevance: 0.25963706167403805
+[2021-10-15 03:39:50,497] DEBUG  Finished AutoRec, {'hidden_layer_size': 2048, 'random_state': 42}
+[2021-10-15 03:40:09,852] DEBUG  Started AutoRec, {'hidden_layer_size': 2048, 'random_state': 77}
+[2021-10-15 03:40:53,498] DEBUG  Recall: 0.02566225165562914,coverage: 0.04641122504047491,novelty: 0.6470927000045776,unexpectedness: 0.8028973509933774,relevance: 0.3314074549378397
+[2021-10-15 03:40:53,499] DEBUG  Finished AutoRec, {'hidden_layer_size': 2048, 'random_state': 77}
+[2021-10-15 03:40:53,525] INFO  Grid search ended: AutoRec
+[2021-10-15 03:40:53,525] INFO  Saved AutoRec as results\unexp_but_i_fix\AutoRec.joblib
+[2021-10-15 03:40:58,157] INFO  Grid search started: KNNpopularity
+[2021-10-15 03:40:58,414] DEBUG  Started KNNpopularity, {'k': 5}
+[2021-10-15 03:44:00,126] DEBUG  Recall: 0.07533112582781457,coverage: 0.3073394495412844,novelty: 0.8066206574440002,unexpectedness: 0.5572019867549669,relevance: 0.29233816910500726
+[2021-10-15 03:44:00,127] DEBUG  Finished KNNpopularity, {'k': 5}
+[2021-10-15 03:44:00,388] DEBUG  Started KNNpopularity, {'k': 10}
+[2021-10-15 03:47:12,560] DEBUG  Recall: 0.08112582781456953,coverage: 0.2366432811656773,novelty: 0.7820445895195007,unexpectedness: 0.3402317880794702,relevance: 0.2932451787010204
+[2021-10-15 03:47:12,560] DEBUG  Finished KNNpopularity, {'k': 10}
+[2021-10-15 03:47:12,821] DEBUG  Started KNNpopularity, {'k': 15}
+[2021-10-15 03:50:29,194] DEBUG  Recall: 0.08609271523178808,coverage: 0.2050728548300054,novelty: 0.7544700503349304,unexpectedness: 0.0,relevance: 0.2928664837924969
+[2021-10-15 03:50:29,194] DEBUG  Finished KNNpopularity, {'k': 15}
+[2021-10-15 03:50:29,456] DEBUG  Started KNNpopularity, {'k': 20}
+[2021-10-15 03:53:51,935] DEBUG  Recall: 0.0836092715231788,coverage: 0.1829465731246627,novelty: 0.7494011521339417,unexpectedness: 0.3402317880794702,relevance: 0.2915136240367329
+[2021-10-15 03:53:51,935] DEBUG  Finished KNNpopularity, {'k': 20}
+[2021-10-15 03:53:52,197] DEBUG  Started KNNpopularity, {'k': 30}
+[2021-10-15 03:57:29,895] DEBUG  Recall: 0.08278145695364239,coverage: 0.15893146249325418,novelty: 0.7331822514533997,unexpectedness: 0.5572019867549669,relevance: 0.2880449939637745
+[2021-10-15 03:57:29,896] DEBUG  Finished KNNpopularity, {'k': 30}
+[2021-10-15 03:57:30,196] DEBUG  Started KNNpopularity, {'k': 40}
+[2021-10-15 04:01:21,094] DEBUG  Recall: 0.0836092715231788,coverage: 0.13815434430652995,novelty: 0.7169581651687622,unexpectedness: 0.8029801324503312,relevance: 0.28564876663124517
+[2021-10-15 04:01:21,094] DEBUG  Finished KNNpopularity, {'k': 40}
+[2021-10-15 04:01:21,355] DEBUG  Started KNNpopularity, {'k': 50}
+[2021-10-15 04:05:25,460] DEBUG  Recall: 0.08278145695364239,coverage: 0.12898003237992445,novelty: 0.7042673826217651,unexpectedness: 0.7879966887417218,relevance: 0.28294409393856856
+[2021-10-15 04:05:25,460] DEBUG  Finished KNNpopularity, {'k': 50}
+[2021-10-15 04:05:25,723] DEBUG  Started KNNpopularity, {'k': 60}
+[2021-10-15 04:09:45,041] DEBUG  Recall: 0.0836092715231788,coverage: 0.11575822989746357,novelty: 0.6888561844825745,unexpectedness: 0.7767384105960264,relevance: 0.2808549416492484
+[2021-10-15 04:09:45,041] DEBUG  Finished KNNpopularity, {'k': 60}
+[2021-10-15 04:09:45,305] DEBUG  Started KNNpopularity, {'k': 70}
+[2021-10-15 04:14:16,898] DEBUG  Recall: 0.08526490066225166,coverage: 0.10793308148947653,novelty: 0.6779860854148865,unexpectedness: 0.7793874172185431,relevance: 0.27868624286324983
+[2021-10-15 04:14:16,899] DEBUG  Finished KNNpopularity, {'k': 70}
+[2021-10-15 04:14:17,159] DEBUG  Started KNNpopularity, {'k': 80}
+[2021-10-15 04:19:02,156] DEBUG  Recall: 0.0802980132450331,coverage: 0.10199676200755532,novelty: 0.6645212769508362,unexpectedness: 0.7622516556291391,relevance: 0.2766249023667557
+[2021-10-15 04:19:02,156] DEBUG  Finished KNNpopularity, {'k': 80}
+[2021-10-15 04:19:02,416] DEBUG  Started KNNpopularity, {'k': 90}
+[2021-10-15 04:24:00,873] DEBUG  Recall: 0.0802980132450331,coverage: 0.09579060982191041,novelty: 0.6575667858123779,unexpectedness: 0.768046357615894,relevance: 0.2754018065828818
+[2021-10-15 04:24:00,874] DEBUG  Finished KNNpopularity, {'k': 90}
+[2021-10-15 04:24:01,132] DEBUG  Started KNNpopularity, {'k': 100}
+[2021-10-15 04:29:12,790] DEBUG  Recall: 0.08857615894039735,coverage: 0.09093362115488397,novelty: 0.6488868594169617,unexpectedness: 0.7720198675496688,relevance: 0.2734647038754146
+[2021-10-15 04:29:12,790] DEBUG  Finished KNNpopularity, {'k': 100}
+[2021-10-15 04:29:13,053] DEBUG  Started KNNpopularity, {'k': 300}
+[2021-10-15 04:39:02,598] DEBUG  Recall: 0.06788079470198675,coverage: 0.05558553696708041,novelty: 0.5577728152275085,unexpectedness: 0.7548841059602649,relevance: 0.25630038788377896
+[2021-10-15 04:39:02,598] DEBUG  Finished KNNpopularity, {'k': 300}
+[2021-10-15 04:39:02,861] DEBUG  Started KNNpopularity, {'k': 500}
+[2021-10-15 04:53:18,307] DEBUG  Recall: 0.056291390728476824,coverage: 0.04506206152185645,novelty: 0.5173619985580444,unexpectedness: 0.6628311258278146,relevance: 0.24850541063041742
+[2021-10-15 04:53:18,307] DEBUG  Finished KNNpopularity, {'k': 500}
+[2021-10-15 04:53:18,572] DEBUG  Started KNNpopularity, {'k': 700}
+[2021-10-15 05:12:07,072] DEBUG  Recall: 0.04966887417218543,coverage: 0.03939557474365893,novelty: 0.48225393891334534,unexpectedness: 0.6763245033112583,relevance: 0.24323880568978354
+[2021-10-15 05:12:07,074] DEBUG  Finished KNNpopularity, {'k': 700}
+[2021-10-15 05:12:07,338] DEBUG  Started KNNpopularity, {'k': 1000}
+[2021-10-15 05:37:34,137] DEBUG  Recall: 0.04718543046357616,coverage: 0.03588774959525094,novelty: 0.440154105424881,unexpectedness: 0.6000000000000001,relevance: 0.2379290609883198
+[2021-10-15 05:37:34,137] DEBUG  Finished KNNpopularity, {'k': 1000}
+[2021-10-15 05:37:34,164] INFO  Grid search ended: KNNpopularity
+[2021-10-15 05:37:34,164] INFO  Saved KNNpopularity as results\unexp_but_i_fix\KNNpopularity.joblib
+[2021-10-15 05:37:36,169] INFO  Grid search started: MatrixFactorization
+[2021-10-15 05:37:36,905] DEBUG  Started MatrixFactorization, {'n_components': 5, 'random_state': 42}
+[2021-10-15 05:40:52,062] DEBUG  Recall: 0.055463576158940396,coverage: 0.17593092282784673,novelty: 0.7432193160057068,unexpectedness: 0.8151490066225165,relevance: 0.2876845175657701
+[2021-10-15 05:40:52,062] DEBUG  Finished MatrixFactorization, {'n_components': 5, 'random_state': 42}
+[2021-10-15 05:40:52,815] DEBUG  Started MatrixFactorization, {'n_components': 10, 'random_state': 42}
+[2021-10-15 05:44:07,937] DEBUG  Recall: 0.07119205298013245,coverage: 0.1894225580140313,novelty: 0.7510954141616821,unexpectedness: 0.8274006622516556,relevance: 0.30464697705078314
+[2021-10-15 05:44:07,937] DEBUG  Finished MatrixFactorization, {'n_components': 10, 'random_state': 42}
+[2021-10-15 05:44:08,744] DEBUG  Started MatrixFactorization, {'n_components': 20, 'random_state': 42}
+[2021-10-15 05:47:24,075] DEBUG  Recall: 0.08609271523178808,coverage: 0.2018348623853211,novelty: 0.7647770047187805,unexpectedness: 0.8377483443708609,relevance: 0.307412550523072
+[2021-10-15 05:47:24,075] DEBUG  Finished MatrixFactorization, {'n_components': 20, 'random_state': 42}
+[2021-10-15 05:47:25,054] DEBUG  Started MatrixFactorization, {'n_components': 50, 'random_state': 42}
+[2021-10-15 05:50:40,463] DEBUG  Recall: 0.0869205298013245,coverage: 0.20696168375607124,novelty: 0.7790922522544861,unexpectedness: 0.8669701986754969,relevance: 0.310026425356974
+[2021-10-15 05:50:40,464] DEBUG  Finished MatrixFactorization, {'n_components': 50, 'random_state': 42}
+[2021-10-15 05:50:41,882] DEBUG  Started MatrixFactorization, {'n_components': 100, 'random_state': 42}
+[2021-10-15 05:53:57,264] DEBUG  Recall: 0.08278145695364239,coverage: 0.20615218564490015,novelty: 0.7898902893066406,unexpectedness: 0.8564569536423841,relevance: 0.3074593974468046
+[2021-10-15 05:53:57,264] DEBUG  Finished MatrixFactorization, {'n_components': 100, 'random_state': 42}
+[2021-10-15 05:53:59,495] DEBUG  Started MatrixFactorization, {'n_components': 200, 'random_state': 42}
+[2021-10-15 05:57:15,378] DEBUG  Recall: 0.08774834437086093,coverage: 0.2085806799784134,novelty: 0.7866077423095703,unexpectedness: 0.8585264900662253,relevance: 0.30460851902843566
+[2021-10-15 05:57:15,378] DEBUG  Finished MatrixFactorization, {'n_components': 200, 'random_state': 42}
+[2021-10-15 05:57:19,571] DEBUG  Started MatrixFactorization, {'n_components': 500, 'random_state': 42}
+[2021-10-15 06:00:35,482] DEBUG  Recall: 0.0869205298013245,coverage: 0.20291419320021586,novelty: 0.7653064131736755,unexpectedness: 0.846771523178808,relevance: 0.30022476169534007
+[2021-10-15 06:00:35,483] DEBUG  Finished MatrixFactorization, {'n_components': 500, 'random_state': 42}
+[2021-10-15 06:00:43,926] DEBUG  Started MatrixFactorization, {'n_components': 1000, 'random_state': 42}
+[2021-10-15 06:04:00,136] DEBUG  Recall: 0.08278145695364239,coverage: 0.19454937938478142,novelty: 0.7612143754959106,unexpectedness: 0.8514072847682119,relevance: 0.2955353777301547
+[2021-10-15 06:04:00,137] DEBUG  Finished MatrixFactorization, {'n_components': 1000, 'random_state': 42}
+[2021-10-15 06:04:20,745] DEBUG  Started MatrixFactorization, {'n_components': 2000, 'random_state': 42}
+[2021-10-15 06:07:37,321] DEBUG  Recall: 0.0836092715231788,coverage: 0.18456556934700485,novelty: 0.7544249296188354,unexpectedness: 0.8485099337748344,relevance: 0.2915858616956836
+[2021-10-15 06:07:37,321] DEBUG  Finished MatrixFactorization, {'n_components': 2000, 'random_state': 42}
+[2021-10-15 06:07:37,339] INFO  Grid search ended: MatrixFactorization
+[2021-10-15 06:07:37,342] INFO  Saved MatrixFactorization as results\unexp_but_i_fix\MatrixFactorization.joblib

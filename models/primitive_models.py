@@ -1,23 +1,33 @@
-from models.simple_knn import KNN
-from models.knn_popular_optimized import KNNpopularity
-from models.mf_optimized import MatrixFactorization
-from models.autorec import AutoRec
+import json
+from collections import defaultdict
+
+import numpy as np
+from sklearn.model_selection import ParameterGrid
+from tqdm import tqdm
+
+from models.ease import EASE
+from models.knn_popular import KNNpopularity
+from models.mf import MatrixFactorization
+
+models = {
+    'EASE': EASE,
+    'KNNpopularity': KNNpopularity,
+    'MatrixFactorization': MatrixFactorization,
+}
 
 
 class PrimitiveModels:
-    def __init__(self, train_data, ratings, item_ratings):
-        self.primitive_models = [
-            KNN('KNN', train_data, ratings),
-            KNNpopularity('KNNpopularity', train_data, item_ratings),
-            MatrixFactorization('MatrixFactorization', train_data, item_ratings),
-            AutoRec('AutoRec', train_data, item_ratings)
-        ]
+    def __init__(self, train_data, ease_ratings, item_ratings, ease_control_items):
+        self.primitive_models = []
+        self.train_data = train_data
+        self.ease_ratings = ease_ratings
+        self.item_ratings = item_ratings
+        self.ease_control_items = ease_control_items
 
         self.primitive_grid = {
-            'AutoRec': {'hidden_layer_size': 128, 'random_state': 100},
-            'KNN': {'k': 5},
-            'KNNpopularity': {'k': 5},
-            'MatrixFactorization': {'n_components': 100, 'random_state': 42},
+            'KNNpopularity': {'k': [5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100, 300, 500, 700, 1000]},
+            'MatrixFactorization': {'n_components': [5, 10, 20, 50, 100, 200, 500, 1000, 2000], 'random_state': [42]},
+            'EASE': {'l': [1.0, 10.0, 50.0, 100.0, 250.0, 500.0, 750.0, 1000.0, 2000.0, 5000.0, 10000.0]}
         }
 
         self.prepare()
@@ -53,10 +63,24 @@ class PrimitiveModels:
         :param n: Number of recommendations.
         :return: dict {user_id: recommendations}.
         """
-        primitive_recommendations = {}
+        primitive_recommendations = defaultdict(dict)
 
-        for user_id, user_profile in test_data.iterrows():  # iterate over test users, user_profile is a tuple
-            prediction = self.predict(user_profile, n)
-            primitive_recommendations[user_id] = prediction
+        for model_name in tqdm(models):
+            for grid in ParameterGrid(self.primitive_grid[model_name]):
+                # EASE API is different this if case is required
+                if model_name == 'EASE':
+                    model = models[model_name](self.ease_ratings, grid['l'])
+                    predictions = model.prepare_recommendations(self.ease_control_items)
+
+                    for user_id, _ in test_data.iterrows():  # iterate over test users, user_profile is a tuple
+                        prediction = np.array(predictions[user_id])
+                        primitive_recommendations[user_id][json.dumps(grid)] = prediction
+                else:
+                    model = models[model_name](model_name, self.train_data, self.item_ratings)
+                    model.fit(grid)
+
+                    for user_id, user_profile in test_data.iterrows():  # iterate over test users, user_profile is a tuple
+                        prediction = model.predict(user_profile, n)
+                        primitive_recommendations[user_id][json.dumps(grid)] = prediction
 
         return primitive_recommendations

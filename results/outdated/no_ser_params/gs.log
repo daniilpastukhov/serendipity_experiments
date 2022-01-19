@@ -1,0 +1,12 @@
+[2021-09-22 23:25:51,854] INFO  Dataset: 1m
+[2021-09-22 23:26:06,955] INFO  Grid search started: KNNpopularity
+[2021-09-22 23:26:07,249] DEBUG  Started KNNpopularity, {'k': 5}
+[2021-09-22 23:28:58,635] DEBUG  Recall: 0.07533112582781457, coverage: 0.3073394495412844, serendipity: 0.5697778697571744
+[2021-09-22 23:28:58,636] DEBUG  Finished KNNpopularity, {'k': 5}
+[2021-09-22 23:28:58,924] DEBUG  Started KNNpopularity, {'k': 10}
+[2021-09-22 23:32:01,319] DEBUG  Recall: 0.08112582781456953, coverage: 0.2366432811656773, serendipity: 0.6027110927152318
+[2021-09-22 23:32:01,320] DEBUG  Finished KNNpopularity, {'k': 10}
+[2021-09-22 23:32:01,618] DEBUG  Started KNNpopularity, {'k': 15}
+[2021-09-22 23:35:13,032] DEBUG  Recall: 0.08609271523178808, coverage: 0.2050728548300054, serendipity: 0.6061948123620309
+[2021-09-22 23:35:13,043] DEBUG  Finished KNNpopularity, {'k': 15}
+[2021-09-22 23:35:13,328] DEBUG  Started KNNpopularity, {'k': 20}

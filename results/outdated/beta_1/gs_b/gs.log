@@ -1,0 +1,223 @@
+[2021-09-15 21:32:26,817] INFO  Dataset: 1m
+[2021-09-15 21:32:55,241] INFO  Grid search started: KNNpopularity
+[2021-09-15 21:32:55,583] DEBUG  Started KNNpopularity, {'k': 2}
+[2021-09-15 21:40:35,454] DEBUG  Recall: 0.03642384105960265, coverage: 0.35806799784133836, serendipity: 0.9320939109639441
+[2021-09-15 21:40:35,454] DEBUG  Finished KNNpopularity, {'k': 2}
+[2021-09-15 21:40:35,793] DEBUG  Started KNNpopularity, {'k': 3}
+[2021-09-15 21:48:19,551] DEBUG  Recall: 0.029801324503311258, coverage: 0.33135456017269294, serendipity: 0.9431394867549668
+[2021-09-15 21:48:19,552] DEBUG  Finished KNNpopularity, {'k': 3}
+[2021-09-15 21:48:19,891] DEBUG  Started KNNpopularity, {'k': 4}
+[2021-09-15 21:56:03,885] DEBUG  Recall: 0.029801324503311258, coverage: 0.3073394495412844, serendipity: 0.9504139072847682
+[2021-09-15 21:56:03,885] DEBUG  Finished KNNpopularity, {'k': 4}
+[2021-09-15 21:56:04,221] DEBUG  Started KNNpopularity, {'k': 5}
+[2021-09-15 22:03:53,918] DEBUG  Recall: 0.024834437086092714, coverage: 0.2914193200215866, serendipity: 0.9556498344370861
+[2021-09-15 22:03:53,919] DEBUG  Finished KNNpopularity, {'k': 5}
+[2021-09-15 22:03:54,258] DEBUG  Started KNNpopularity, {'k': 10}
+[2021-09-15 22:12:03,572] DEBUG  Recall: 0.022350993377483443, coverage: 0.23772261198057204, serendipity: 0.9744619205298014
+[2021-09-15 22:12:03,572] DEBUG  Finished KNNpopularity, {'k': 10}
+[2021-09-15 22:12:03,911] DEBUG  Started KNNpopularity, {'k': 15}
+[2021-09-15 22:20:24,277] DEBUG  Recall: 0.01903973509933775, coverage: 0.20102536427415002, serendipity: 0.9810844370860928
+[2021-09-15 22:20:24,278] DEBUG  Finished KNNpopularity, {'k': 15}
+[2021-09-15 22:20:24,627] DEBUG  Started KNNpopularity, {'k': 20}
+[2021-09-15 22:28:53,993] DEBUG  Recall: 0.01903973509933775, coverage: 0.17539125742039935, serendipity: 0.9837748344370861
+[2021-09-15 22:28:53,993] DEBUG  Finished KNNpopularity, {'k': 20}
+[2021-09-15 22:28:54,329] DEBUG  Started KNNpopularity, {'k': 25}
+[2021-09-15 22:37:40,140] DEBUG  Recall: 0.01903973509933775, coverage: 0.1559633027522936, serendipity: 0.9865480132450332
+[2021-09-15 22:37:40,141] DEBUG  Finished KNNpopularity, {'k': 25}
+[2021-09-15 22:37:40,487] DEBUG  Started KNNpopularity, {'k': 30}
+[2021-09-15 22:46:41,271] DEBUG  Recall: 0.0173841059602649, coverage: 0.14085267134376686, serendipity: 0.9884105960264901
+[2021-09-15 22:46:41,271] DEBUG  Finished KNNpopularity, {'k': 30}
+[2021-09-15 22:46:41,607] DEBUG  Started KNNpopularity, {'k': 40}
+[2021-09-15 22:56:11,047] DEBUG  Recall: 0.0173841059602649, coverage: 0.11899622234214786, serendipity: 0.9902110927152318
+[2021-09-15 22:56:11,047] DEBUG  Finished KNNpopularity, {'k': 40}
+[2021-09-15 22:56:11,386] DEBUG  Started KNNpopularity, {'k': 50}
+[2021-09-15 23:06:08,542] DEBUG  Recall: 0.0173841059602649, coverage: 0.10469508904479223, serendipity: 0.9916597682119207
+[2021-09-15 23:06:08,542] DEBUG  Finished KNNpopularity, {'k': 50}
+[2021-09-15 23:06:08,878] DEBUG  Started KNNpopularity, {'k': 60}
+[2021-09-15 23:16:32,808] DEBUG  Recall: 0.018211920529801324, coverage: 0.09363194819212088, serendipity: 0.9920736754966887
+[2021-09-15 23:16:32,808] DEBUG  Finished KNNpopularity, {'k': 60}
+[2021-09-15 23:16:33,137] DEBUG  Started KNNpopularity, {'k': 70}
+[2021-09-15 23:27:22,666] DEBUG  Recall: 0.018211920529801324, coverage: 0.08256880733944955, serendipity: 0.9927359271523178
+[2021-09-15 23:27:22,666] DEBUG  Finished KNNpopularity, {'k': 70}
+[2021-09-15 23:27:23,005] DEBUG  Started KNNpopularity, {'k': 80}
+[2021-09-15 23:38:38,285] DEBUG  Recall: 0.0173841059602649, coverage: 0.07555315704263357, serendipity: 0.993149834437086
+[2021-09-15 23:38:38,286] DEBUG  Finished KNNpopularity, {'k': 80}
+[2021-09-15 23:38:38,620] DEBUG  Started KNNpopularity, {'k': 90}
+[2021-09-15 23:50:22,910] DEBUG  Recall: 0.020695364238410598, coverage: 0.06718834322719913, serendipity: 0.9934809602649006
+[2021-09-15 23:50:22,910] DEBUG  Finished KNNpopularity, {'k': 90}
+[2021-09-15 23:50:23,241] DEBUG  Started KNNpopularity, {'k': 100}
+[2021-09-16 00:02:36,826] DEBUG  Recall: 0.020695364238410598, coverage: 0.06071235833783054, serendipity: 0.9938741721854304
+[2021-09-16 00:02:36,826] DEBUG  Finished KNNpopularity, {'k': 100}
+[2021-09-16 00:02:37,164] DEBUG  Started KNNpopularity, {'k': 150}
+[2021-09-16 00:17:12,792] DEBUG  Recall: 0.014072847682119206, coverage: 0.044252563410685376, serendipity: 0.9949710264900662
+[2021-09-16 00:17:12,792] DEBUG  Finished KNNpopularity, {'k': 150}
+[2021-09-16 00:17:13,119] DEBUG  Started KNNpopularity, {'k': 300}
+[2021-09-16 00:38:43,011] DEBUG  Recall: 0.004966887417218543, coverage: 0.02266594711279007, serendipity: 0.997019867549669
+[2021-09-16 00:38:43,011] DEBUG  Finished KNNpopularity, {'k': 300}
+[2021-09-16 00:38:43,334] DEBUG  Started KNNpopularity, {'k': 500}
+[2021-09-16 01:09:31,510] DEBUG  Recall: 0.0016556291390728477, coverage: 0.013221802482460875, serendipity: 0.9979925496688741
+[2021-09-16 01:09:31,510] DEBUG  Finished KNNpopularity, {'k': 500}
+[2021-09-16 01:09:31,830] DEBUG  Started KNNpopularity, {'k': 1000}
+[2021-09-16 02:03:20,953] DEBUG  Recall: 0.0016556291390728477, coverage: 0.007555315704263357, serendipity: 0.9982615894039736
+[2021-09-16 02:03:20,953] DEBUG  Finished KNNpopularity, {'k': 1000}
+[2021-09-16 02:03:20,953] INFO  Grid search ended: KNNpopularity
+[2021-09-16 02:03:20,953] INFO  Saved KNNpopularity as ./KNNpopularity.joblib
+[2021-09-16 02:03:20,956] INFO  Grid search started: MatrixFactorization
+[2021-09-16 02:03:22,388] DEBUG  Started MatrixFactorization, {'n_components': 1, 'random_state': 42}
+[2021-09-16 02:07:40,783] DEBUG  Recall: 0.0016556291390728477, coverage: 0.007015650296815974, serendipity: 0.9982201986754966
+[2021-09-16 02:07:40,783] DEBUG  Finished MatrixFactorization, {'n_components': 1, 'random_state': 42}
+[2021-09-16 02:07:42,172] DEBUG  Started MatrixFactorization, {'n_components': 2, 'random_state': 42}
+[2021-09-16 02:12:00,608] DEBUG  Recall: 0.0033112582781456954, coverage: 0.11980572045331894, serendipity: 0.9979511589403972
+[2021-09-16 02:12:00,609] DEBUG  Finished MatrixFactorization, {'n_components': 2, 'random_state': 42}
+[2021-09-16 02:12:02,050] DEBUG  Started MatrixFactorization, {'n_components': 3, 'random_state': 42}
+[2021-09-16 02:16:20,131] DEBUG  Recall: 0.0033112582781456954, coverage: 0.1335671883432272, serendipity: 0.996875
+[2021-09-16 02:16:20,131] DEBUG  Finished MatrixFactorization, {'n_components': 3, 'random_state': 42}
+[2021-09-16 02:16:21,625] DEBUG  Started MatrixFactorization, {'n_components': 4, 'random_state': 42}
+[2021-09-16 02:20:38,973] DEBUG  Recall: 0.005794701986754967, coverage: 0.16109012412304372, serendipity: 0.9957160596026489
+[2021-09-16 02:20:38,973] DEBUG  Finished MatrixFactorization, {'n_components': 4, 'random_state': 42}
+[2021-09-16 02:20:40,513] DEBUG  Started MatrixFactorization, {'n_components': 5, 'random_state': 42}
+[2021-09-16 02:25:00,137] DEBUG  Recall: 0.01076158940397351, coverage: 0.16837560712358338, serendipity: 0.9939155629139074
+[2021-09-16 02:25:00,137] DEBUG  Finished MatrixFactorization, {'n_components': 5, 'random_state': 42}
+[2021-09-16 02:25:01,668] DEBUG  Started MatrixFactorization, {'n_components': 10, 'random_state': 42}
+[2021-09-16 02:29:19,688] DEBUG  Recall: 0.018211920529801324, coverage: 0.17889908256880735, serendipity: 0.9900248344370861
+[2021-09-16 02:29:19,688] DEBUG  Finished MatrixFactorization, {'n_components': 10, 'random_state': 42}
+[2021-09-16 02:29:21,422] DEBUG  Started MatrixFactorization, {'n_components': 20, 'random_state': 42}
+[2021-09-16 02:33:40,553] DEBUG  Recall: 0.016556291390728478, coverage: 0.18132757690232057, serendipity: 0.9875413907284767
+[2021-09-16 02:33:40,554] DEBUG  Finished MatrixFactorization, {'n_components': 20, 'random_state': 42}
+[2021-09-16 02:33:42,720] DEBUG  Started MatrixFactorization, {'n_components': 50, 'random_state': 42}
+[2021-09-16 02:38:06,636] DEBUG  Recall: 0.014900662251655629, coverage: 0.18186724230976795, serendipity: 0.9851407284768211
+[2021-09-16 02:38:06,637] DEBUG  Finished MatrixFactorization, {'n_components': 50, 'random_state': 42}
+[2021-09-16 02:38:09,816] DEBUG  Started MatrixFactorization, {'n_components': 100, 'random_state': 42}
+[2021-09-16 02:42:34,912] DEBUG  Recall: 0.016556291390728478, coverage: 0.1770102536427415, serendipity: 0.9848096026490067
+[2021-09-16 02:42:34,912] DEBUG  Finished MatrixFactorization, {'n_components': 100, 'random_state': 42}
+[2021-09-16 02:42:39,861] DEBUG  Started MatrixFactorization, {'n_components': 200, 'random_state': 42}
+[2021-09-16 02:47:06,661] DEBUG  Recall: 0.01903973509933775, coverage: 0.17296276308688613, serendipity: 0.9850579470198676
+[2021-09-16 02:47:06,661] DEBUG  Finished MatrixFactorization, {'n_components': 200, 'random_state': 42}
+[2021-09-16 02:47:17,705] DEBUG  Started MatrixFactorization, {'n_components': 500, 'random_state': 42}
+[2021-09-16 02:51:50,189] DEBUG  Recall: 0.015728476821192054, coverage: 0.17674042093901782, serendipity: 0.985430463576159
+[2021-09-16 02:51:50,190] DEBUG  Finished MatrixFactorization, {'n_components': 500, 'random_state': 42}
+[2021-09-16 02:52:13,139] DEBUG  Started MatrixFactorization, {'n_components': 1000, 'random_state': 42}
+[2021-09-16 02:57:00,334] DEBUG  Recall: 0.016556291390728478, coverage: 0.17674042093901782, serendipity: 0.9849544701986755
+[2021-09-16 02:57:00,334] DEBUG  Finished MatrixFactorization, {'n_components': 1000, 'random_state': 42}
+[2021-09-16 02:57:00,336] INFO  Grid search ended: MatrixFactorization
+[2021-09-16 02:57:00,336] INFO  Saved MatrixFactorization as ./MatrixFactorization.joblib
+[2021-09-16 02:57:00,338] INFO  Grid search started: AutoRec
+[2021-09-16 02:57:14,712] DEBUG  Started AutoRec, {'hidden_layer_size': 4, 'random_state': 11}
+[2021-09-16 02:58:07,303] DEBUG  Recall: 0.015728476821192054, coverage: 0.03211009174311927, serendipity: 0.8367756622516557
+[2021-09-16 02:58:07,303] DEBUG  Finished AutoRec, {'hidden_layer_size': 4, 'random_state': 11}
+[2021-09-16 02:58:21,216] DEBUG  Started AutoRec, {'hidden_layer_size': 4, 'random_state': 42}
+[2021-09-16 02:59:12,583] DEBUG  Recall: 0.018211920529801324, coverage: 0.026173772261198058, serendipity: 0.8371067880794703
+[2021-09-16 02:59:12,583] DEBUG  Finished AutoRec, {'hidden_layer_size': 4, 'random_state': 42}
+[2021-09-16 02:59:28,536] DEBUG  Started AutoRec, {'hidden_layer_size': 4, 'random_state': 77}
+[2021-09-16 03:00:20,183] DEBUG  Recall: 0.018211920529801324, coverage: 0.007825148407987047, serendipity: 0.82903559602649
+[2021-09-16 03:00:20,183] DEBUG  Finished AutoRec, {'hidden_layer_size': 4, 'random_state': 77}
+[2021-09-16 03:00:34,878] DEBUG  Started AutoRec, {'hidden_layer_size': 8, 'random_state': 11}
+[2021-09-16 03:01:27,966] DEBUG  Recall: 0.02152317880794702, coverage: 0.019427954668105773, serendipity: 0.8284354304635762
+[2021-09-16 03:01:27,966] DEBUG  Finished AutoRec, {'hidden_layer_size': 8, 'random_state': 11}
+[2021-09-16 03:01:48,753] DEBUG  Started AutoRec, {'hidden_layer_size': 8, 'random_state': 42}
+[2021-09-16 03:02:42,270] DEBUG  Recall: 0.020695364238410598, coverage: 0.005666486778197518, serendipity: 0.8241514900662252
+[2021-09-16 03:02:42,271] DEBUG  Finished AutoRec, {'hidden_layer_size': 8, 'random_state': 42}
+[2021-09-16 03:03:01,524] DEBUG  Started AutoRec, {'hidden_layer_size': 8, 'random_state': 77}
+[2021-09-16 03:03:54,949] DEBUG  Recall: 0.022350993377483443, coverage: 0.004856988667026443, serendipity: 0.827566225165563
+[2021-09-16 03:03:54,949] DEBUG  Finished AutoRec, {'hidden_layer_size': 8, 'random_state': 77}
+[2021-09-16 03:04:09,690] DEBUG  Started AutoRec, {'hidden_layer_size': 16, 'random_state': 11}
+[2021-09-16 03:05:04,510] DEBUG  Recall: 0.018211920529801324, coverage: 0.04560172692930383, serendipity: 0.8237789735099338
+[2021-09-16 03:05:04,510] DEBUG  Finished AutoRec, {'hidden_layer_size': 16, 'random_state': 11}
+[2021-09-16 03:05:17,365] DEBUG  Started AutoRec, {'hidden_layer_size': 16, 'random_state': 42}
+[2021-09-16 03:06:11,074] DEBUG  Recall: 0.019867549668874173, coverage: 0.042093901780895844, serendipity: 0.8273385761589405
+[2021-09-16 03:06:11,074] DEBUG  Finished AutoRec, {'hidden_layer_size': 16, 'random_state': 42}
+[2021-09-16 03:06:25,975] DEBUG  Started AutoRec, {'hidden_layer_size': 16, 'random_state': 77}
+[2021-09-16 03:07:22,053] DEBUG  Recall: 0.018211920529801324, coverage: 0.033189422558014034, serendipity: 0.8221026490066226
+[2021-09-16 03:07:22,053] DEBUG  Finished AutoRec, {'hidden_layer_size': 16, 'random_state': 77}
+[2021-09-16 03:07:45,228] DEBUG  Started AutoRec, {'hidden_layer_size': 64, 'random_state': 11}
+[2021-09-16 03:08:41,377] DEBUG  Recall: 0.024006622516556293, coverage: 0.03184025903939557, serendipity: 0.7441846026490065
+[2021-09-16 03:08:41,378] DEBUG  Finished AutoRec, {'hidden_layer_size': 64, 'random_state': 11}
+[2021-09-16 03:09:04,115] DEBUG  Started AutoRec, {'hidden_layer_size': 64, 'random_state': 42}
+[2021-09-16 03:09:55,858] DEBUG  Recall: 0.019867549668874173, coverage: 0.03291958985429034, serendipity: 0.7424875827814569
+[2021-09-16 03:09:55,859] DEBUG  Finished AutoRec, {'hidden_layer_size': 64, 'random_state': 42}
+[2021-09-16 03:10:18,529] DEBUG  Started AutoRec, {'hidden_layer_size': 64, 'random_state': 77}
+[2021-09-16 03:11:13,309] DEBUG  Recall: 0.028145695364238412, coverage: 0.03426875337290879, serendipity: 0.7415562913907284
+[2021-09-16 03:11:13,310] DEBUG  Finished AutoRec, {'hidden_layer_size': 64, 'random_state': 77}
+[2021-09-16 03:11:34,258] DEBUG  Started AutoRec, {'hidden_layer_size': 128, 'random_state': 11}
+[2021-09-16 03:12:26,404] DEBUG  Recall: 0.022350993377483443, coverage: 0.04937938478143551, serendipity: 0.7430670529801324
+[2021-09-16 03:12:26,405] DEBUG  Finished AutoRec, {'hidden_layer_size': 128, 'random_state': 11}
+[2021-09-16 03:12:47,912] DEBUG  Started AutoRec, {'hidden_layer_size': 128, 'random_state': 42}
+[2021-09-16 03:13:39,149] DEBUG  Recall: 0.022350993377483443, coverage: 0.05531570426335672, serendipity: 0.671978476821192
+[2021-09-16 03:13:39,150] DEBUG  Finished AutoRec, {'hidden_layer_size': 128, 'random_state': 42}
+[2021-09-16 03:13:58,244] DEBUG  Started AutoRec, {'hidden_layer_size': 128, 'random_state': 77}
+[2021-09-16 03:14:53,073] DEBUG  Recall: 0.024834437086092714, coverage: 0.04641122504047491, serendipity: 0.7451158940397352
+[2021-09-16 03:14:53,073] DEBUG  Finished AutoRec, {'hidden_layer_size': 128, 'random_state': 77}
+[2021-09-16 03:15:19,587] DEBUG  Started AutoRec, {'hidden_layer_size': 192, 'random_state': 11}
+[2021-09-16 03:16:11,717] DEBUG  Recall: 0.028973509933774833, coverage: 0.06233135456017269, serendipity: 0.7465645695364238
+[2021-09-16 03:16:11,718] DEBUG  Finished AutoRec, {'hidden_layer_size': 192, 'random_state': 11}
+[2021-09-16 03:16:35,064] DEBUG  Started AutoRec, {'hidden_layer_size': 192, 'random_state': 42}
+[2021-09-16 03:17:28,393] DEBUG  Recall: 0.028145695364238412, coverage: 0.05774419859686994, serendipity: 0.7351200331125829
+[2021-09-16 03:17:28,393] DEBUG  Finished AutoRec, {'hidden_layer_size': 192, 'random_state': 42}
+[2021-09-16 03:17:52,226] DEBUG  Started AutoRec, {'hidden_layer_size': 192, 'random_state': 77}
+[2021-09-16 03:18:47,372] DEBUG  Recall: 0.020695364238410598, coverage: 0.06395035078251485, serendipity: 0.7450538079470199
+[2021-09-16 03:18:47,372] DEBUG  Finished AutoRec, {'hidden_layer_size': 192, 'random_state': 77}
+[2021-09-16 03:19:12,320] DEBUG  Started AutoRec, {'hidden_layer_size': 256, 'random_state': 11}
+[2021-09-16 03:20:05,984] DEBUG  Recall: 0.019867549668874173, coverage: 0.06610901241230437, serendipity: 0.7457988410596026
+[2021-09-16 03:20:05,984] DEBUG  Finished AutoRec, {'hidden_layer_size': 256, 'random_state': 11}
+[2021-09-16 03:20:33,369] DEBUG  Started AutoRec, {'hidden_layer_size': 256, 'random_state': 42}
+[2021-09-16 03:21:28,226] DEBUG  Recall: 0.02566225165562914, coverage: 0.0652995143011333, serendipity: 0.7456332781456954
+[2021-09-16 03:21:28,226] DEBUG  Finished AutoRec, {'hidden_layer_size': 256, 'random_state': 42}
+[2021-09-16 03:21:55,670] DEBUG  Started AutoRec, {'hidden_layer_size': 256, 'random_state': 77}
+[2021-09-16 03:22:50,328] DEBUG  Recall: 0.020695364238410598, coverage: 0.07285483000539665, serendipity: 0.7481788079470199
+[2021-09-16 03:22:50,328] DEBUG  Finished AutoRec, {'hidden_layer_size': 256, 'random_state': 77}
+[2021-09-16 03:23:23,741] DEBUG  Started AutoRec, {'hidden_layer_size': 384, 'random_state': 11}
+[2021-09-16 03:24:19,665] DEBUG  Recall: 0.024834437086092714, coverage: 0.06718834322719913, serendipity: 0.748841059602649
+[2021-09-16 03:24:19,666] DEBUG  Finished AutoRec, {'hidden_layer_size': 384, 'random_state': 11}
+[2021-09-16 03:24:57,137] DEBUG  Started AutoRec, {'hidden_layer_size': 384, 'random_state': 42}
+[2021-09-16 03:25:48,392] DEBUG  Recall: 0.027317880794701987, coverage: 0.06880733944954129, serendipity: 0.7556084437086092
+[2021-09-16 03:25:48,392] DEBUG  Finished AutoRec, {'hidden_layer_size': 384, 'random_state': 42}
+[2021-09-16 03:26:17,394] DEBUG  Started AutoRec, {'hidden_layer_size': 384, 'random_state': 77}
+[2021-09-16 03:27:10,028] DEBUG  Recall: 0.019867549668874173, coverage: 0.0652995143011333, serendipity: 0.7484478476821192
+[2021-09-16 03:27:10,029] DEBUG  Finished AutoRec, {'hidden_layer_size': 384, 'random_state': 77}
+[2021-09-16 03:27:31,536] DEBUG  Started AutoRec, {'hidden_layer_size': 512, 'random_state': 11}
+[2021-09-16 03:28:26,289] DEBUG  Recall: 0.02152317880794702, coverage: 0.013491635186184566, serendipity: 0.7909975165562915
+[2021-09-16 03:28:26,289] DEBUG  Finished AutoRec, {'hidden_layer_size': 512, 'random_state': 11}
+[2021-09-16 03:28:50,272] DEBUG  Started AutoRec, {'hidden_layer_size': 512, 'random_state': 42}
+[2021-09-16 03:29:43,653] DEBUG  Recall: 0.020695364238410598, coverage: 0.024015110631408525, serendipity: 0.7645695364238411
+[2021-09-16 03:29:43,653] DEBUG  Finished AutoRec, {'hidden_layer_size': 512, 'random_state': 42}
+[2021-09-16 03:30:07,227] DEBUG  Started AutoRec, {'hidden_layer_size': 512, 'random_state': 77}
+[2021-09-16 03:31:02,101] DEBUG  Recall: 0.01903973509933775, coverage: 0.019427954668105773, serendipity: 0.7674254966887417
+[2021-09-16 03:31:02,102] DEBUG  Finished AutoRec, {'hidden_layer_size': 512, 'random_state': 77}
+[2021-09-16 03:31:45,890] DEBUG  Started AutoRec, {'hidden_layer_size': 768, 'random_state': 11}
+[2021-09-16 03:32:40,275] DEBUG  Recall: 0.024006622516556293, coverage: 0.04128440366972477, serendipity: 0.7490894039735099
+[2021-09-16 03:32:40,275] DEBUG  Finished AutoRec, {'hidden_layer_size': 768, 'random_state': 11}
+[2021-09-16 03:32:56,970] DEBUG  Started AutoRec, {'hidden_layer_size': 768, 'random_state': 42}
+[2021-09-16 03:33:52,363] DEBUG  Recall: 0.01903973509933775, coverage: 0.0059363194819212085, serendipity: 0.8244412251655628
+[2021-09-16 03:33:52,364] DEBUG  Finished AutoRec, {'hidden_layer_size': 768, 'random_state': 42}
+[2021-09-16 03:34:07,975] DEBUG  Started AutoRec, {'hidden_layer_size': 768, 'random_state': 77}
+[2021-09-16 03:35:02,477] DEBUG  Recall: 0.01903973509933775, coverage: 0.007015650296815974, serendipity: 0.8307326158940397
+[2021-09-16 03:35:02,477] DEBUG  Finished AutoRec, {'hidden_layer_size': 768, 'random_state': 77}
+[2021-09-16 03:35:19,273] DEBUG  Started AutoRec, {'hidden_layer_size': 1024, 'random_state': 11}
+[2021-09-16 03:36:16,411] DEBUG  Recall: 0.023178807947019868, coverage: 0.006745817593092283, serendipity: 0.8266556291390728
+[2021-09-16 03:36:16,412] DEBUG  Finished AutoRec, {'hidden_layer_size': 1024, 'random_state': 11}
+[2021-09-16 03:37:07,547] DEBUG  Started AutoRec, {'hidden_layer_size': 1024, 'random_state': 42}
+[2021-09-16 03:38:03,065] DEBUG  Recall: 0.029801324503311258, coverage: 0.04533189422558014, serendipity: 0.7471233443708609
+[2021-09-16 03:38:03,065] DEBUG  Finished AutoRec, {'hidden_layer_size': 1024, 'random_state': 42}
+[2021-09-16 03:38:18,978] DEBUG  Started AutoRec, {'hidden_layer_size': 1024, 'random_state': 77}
+[2021-09-16 03:39:13,871] DEBUG  Recall: 0.02152317880794702, coverage: 0.005396654074473826, serendipity: 0.83346440397351
+[2021-09-16 03:39:13,871] DEBUG  Finished AutoRec, {'hidden_layer_size': 1024, 'random_state': 77}
+[2021-09-16 03:39:31,465] DEBUG  Started AutoRec, {'hidden_layer_size': 1536, 'random_state': 11}
+[2021-09-16 03:40:27,056] DEBUG  Recall: 0.023178807947019868, coverage: 0.0059363194819212085, serendipity: 0.8323261589403974
+[2021-09-16 03:40:27,056] DEBUG  Finished AutoRec, {'hidden_layer_size': 1536, 'random_state': 11}
+[2021-09-16 03:40:44,327] DEBUG  Started AutoRec, {'hidden_layer_size': 1536, 'random_state': 42}
+[2021-09-16 03:41:39,110] DEBUG  Recall: 0.018211920529801324, coverage: 0.005666486778197518, serendipity: 0.823385761589404
+[2021-09-16 03:41:39,111] DEBUG  Finished AutoRec, {'hidden_layer_size': 1536, 'random_state': 42}
+[2021-09-16 03:42:25,633] DEBUG  Started AutoRec, {'hidden_layer_size': 1536, 'random_state': 77}
+[2021-09-16 03:43:22,594] DEBUG  Recall: 0.026490066225165563, coverage: 0.04371289800323799, serendipity: 0.7510968543046358
+[2021-09-16 03:43:22,594] DEBUG  Finished AutoRec, {'hidden_layer_size': 1536, 'random_state': 77}
+[2021-09-16 03:44:06,258] DEBUG  Started AutoRec, {'hidden_layer_size': 2048, 'random_state': 11}
+[2021-09-16 03:45:00,727] DEBUG  Recall: 0.019867549668874173, coverage: 0.03912574203993524, serendipity: 0.7540355960264901
+[2021-09-16 03:45:00,727] DEBUG  Finished AutoRec, {'hidden_layer_size': 2048, 'random_state': 11}
+[2021-09-16 03:45:18,644] DEBUG  Started AutoRec, {'hidden_layer_size': 2048, 'random_state': 42}
+[2021-09-16 03:46:13,344] DEBUG  Recall: 0.019867549668874173, coverage: 0.005396654074473826, serendipity: 0.823737582781457
+[2021-09-16 03:46:13,344] DEBUG  Finished AutoRec, {'hidden_layer_size': 2048, 'random_state': 42}
+[2021-09-16 03:47:08,581] DEBUG  Started AutoRec, {'hidden_layer_size': 2048, 'random_state': 77}
+[2021-09-16 03:48:02,935] DEBUG  Recall: 0.02566225165562914, coverage: 0.04641122504047491, serendipity: 0.7509519867549669
+[2021-09-16 03:48:02,935] DEBUG  Finished AutoRec, {'hidden_layer_size': 2048, 'random_state': 77}
+[2021-09-16 03:48:02,938] INFO  Grid search ended: AutoRec
+[2021-09-16 03:48:02,938] INFO  Saved AutoRec as ./AutoRec.joblib

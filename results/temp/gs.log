@@ -1,0 +1,35 @@
+[2021-09-30 01:53:48,959] INFO  Dataset: 1m
+[2021-09-30 01:53:48,967] INFO  Grid search started: KNNpopularity
+[2021-09-30 01:53:49,244] DEBUG  Started KNNpopularity, {'k': 5}
+[2021-10-09 13:52:34,739] INFO  Dataset: 1m
+[2021-10-09 13:52:34,960] INFO  Grid search started: KNNpopularity
+[2021-10-09 13:52:35,266] DEBUG  Started KNNpopularity, {'k': 5}
+[2021-10-09 13:57:42,532] INFO  Dataset: 1m
+[2021-10-12 00:18:42,820] INFO  Dataset: 1m
+[2021-10-18 23:11:07,874] INFO  Dataset: 1m
+[2021-10-18 23:11:54,478] INFO  Grid search started: MatrixFactorization
+[2021-10-18 23:11:55,845] DEBUG  Started MatrixFactorization, {'n_components': 5, 'random_state': 42}
+[2021-10-18 23:13:16,329] INFO  Dataset: 1m
+[2021-10-18 23:13:44,693] INFO  Grid search started: MatrixFactorization
+[2021-10-18 23:13:45,626] DEBUG  Started MatrixFactorization, {'n_components': 5, 'random_state': 42}
+[2021-10-18 23:16:00,227] INFO  Dataset: 1m
+[2021-10-18 23:16:16,846] INFO  Grid search started: MatrixFactorization
+[2021-10-18 23:16:17,672] DEBUG  Started MatrixFactorization, {'n_components': 5, 'random_state': 42}
+[2021-10-18 23:16:58,686] INFO  Dataset: 1m
+[2021-10-18 23:17:15,320] INFO  Grid search started: MatrixFactorization
+[2021-10-18 23:17:16,126] DEBUG  Started MatrixFactorization, {'n_components': 5, 'random_state': 42}
+[2021-10-18 23:22:46,550] INFO  Dataset: 1m
+[2021-10-18 23:23:04,146] INFO  Grid search started: MatrixFactorization
+[2021-10-18 23:23:04,958] DEBUG  Started MatrixFactorization, {'n_components': 5, 'random_state': 42}
+[2021-10-18 23:26:57,368] INFO  Dataset: 1m
+[2021-10-18 23:27:14,261] INFO  Grid search started: MatrixFactorization
+[2021-10-18 23:27:15,069] DEBUG  Started MatrixFactorization, {'n_components': 5, 'random_state': 42}
+[2021-11-11 22:43:58,744] INFO  Dataset: 1m
+[2021-11-11 22:44:14,940] INFO  Grid search started: KNNpopularity
+[2021-11-11 22:44:15,243] DEBUG  Started KNNpopularity, {'k': 5}
+[2021-11-11 22:58:47,903] DEBUG  CACHEDIR=C:\Users\Daniil\.matplotlib
+[2021-11-11 22:58:47,919] DEBUG  Using fontManager instance from C:\Users\Daniil\.matplotlib\fontlist-v330.json
+[2021-11-11 22:58:48,460] DEBUG  Loaded backend module://backend_interagg version unknown.
+[2021-11-11 23:04:34,447] INFO  Dataset: 1m
+[2021-11-11 23:04:47,846] INFO  Grid search started: KNNpopularity
+[2021-11-11 23:04:48,137] DEBUG  Started KNNpopularity, {'k': 5}

@@ -1,3 +1,4 @@
+import json
 import time
 import os
 
@@ -6,14 +7,13 @@ import pandas as pd
 from joblib import load, dump
 from tqdm import tqdm
 import logging
-from datetime import date
 
 from sklearn.model_selection import ParameterGrid
 
+from models.ease import EASE
 from models.primitive_models import PrimitiveModels
-from models.knn_popular_optimized import KNNpopularity
-from models.mf_optimized import MatrixFactorization
-from models.autorec import AutoRec
+from models.knn_popular import KNNpopularity
+from models.mf import MatrixFactorization
 
 from utils.metrics import serendipity
 from utils.helpers import get_movies_by_ids, get_control_items, get_movies_by_profile
@@ -28,7 +28,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 models = {
     'KNNpopularity': KNNpopularity,
     'MatrixFactorization': MatrixFactorization,
-    'AutoRec': AutoRec
+    'EASE': EASE,
 }
 
 args = parse_args()
@@ -41,10 +41,17 @@ DATA_PATH = 'data/movielens/' + DATASET + '/clean/'
 
 ratings = pd.read_csv(DATA_PATH + 'ratings.csv')
 movies = pd.read_csv(os.path.join(DATA_PATH, 'movies.csv'))
+item_ratings = load(DATA_PATH + 'item_sum_dif_rating.pickle')
 
 train_data = pd.read_csv(DATA_PATH + 'train_data.csv', index_col='userId')
 test_df = pd.read_csv(DATA_PATH + 'test_data.csv', index_col='userId')
 test_data, control_items = get_control_items(ratings, test_df)
+
+ease_ratings = pd.read_csv(DATA_PATH + 'ratings.csv')
+ease_test_df = pd.read_csv(DATA_PATH + 'test_data.csv', index_col='userId')
+ease_test_data, _ = get_control_items(ease_ratings, user_profiles=ease_test_df)
+ease_ratings, ease_control_items = get_control_items(ease_ratings, user_ids=ease_test_df.index.values)
+
 
 user_embeddings = {}
 for user_id, user_profile in test_data.iterrows():
@@ -52,7 +59,6 @@ for user_id, user_profile in test_data.iterrows():
 
 logging.info('Dataset: ' + DATASET)
 
-item_ratings = load(DATA_PATH + 'item_sum_dif_rating.pickle')
 
 primitive_models = PrimitiveModels(train_data, ratings, item_ratings)
 n = 10  # number of recommendations for each user
@@ -60,6 +66,7 @@ n = 10  # number of recommendations for each user
 primitive_recommendations = None
 
 if not os.path.isfile('cache/primitive_recommendations.joblib'):
+    primitive_models = PrimitiveModels(train_data, ease_ratings, item_ratings, control_items)
     primitive_recommendations = primitive_models.make_recommendations(test_data, n)
     dump(primitive_recommendations, 'cache/primitive_recommendations.joblib')
 else:
@@ -70,69 +77,51 @@ def grid_search(model_name, grid, data):
     history = []
 
     for params in ParameterGrid(grid):
-        model = models[model_name](model_name, data, item_ratings)
-        model.fit(params)
+        if model_name == 'EASE':
+            model = models[model_name](ease_ratings, params['l'], n)
+        else:
+            model = models[model_name](model_name, data, item_ratings)
+            model.fit(params)
+
         start_time = time.time()
-        logging.debug('Started {}, {}'.format(model_name, params))
-        recall, coverage, ser = evaluate(model, test_data)
-        logging.debug('Recall: {}, coverage: {}, serendipity: {}'.format(recall, coverage, ser))
-        logging.debug('Finished {}, {}'.format(model_name, params))
+        logging.debug(f'Started {model_name}, {params}')
+
+        if model_name == 'EASE':
+            recall, coverage, nov, unexp, rel = model.evaluate(
+                ease_test_data,
+                params,
+                ease_control_items,
+                movies,
+                user_embeddings,
+                primitive_recommendations
+            )
+        else:
+            recall, coverage, nov, unexp, rel = model.evaluate(
+                test_data,
+                params,
+                control_items,
+                user_embeddings,
+                primitive_recommendations,
+                movies,
+                n
+            )
+
+        logging.debug(f'Recall: {recall},'
+                      f'coverage: {coverage},'
+                      f'novelty: {np.mean(nov)},'
+                      f'unexpectedness: {np.mean(unexp)},'
+                      f'relevance: {np.mean(rel)}')
+        logging.debug(f'Finished {model_name}, {params}')
         time_elapsed = time.time() - start_time
-        history.append((params, recall, coverage, ser, time_elapsed))
+        history.append((params, recall, coverage, nov, unexp, rel, time_elapsed))
 
     return history
 
 
-def evaluate(model, data):
-    """
-    Evaluate given model on the data.
-
-    :param model: Recommendation model.
-    :param data: Evaluation data.
-    :return: tuple(recall, coverage, serendipity).
-    """
-    hit = 0  # used for recall calculation
-    total_recommendations = 0
-    all_recommendations = []  # used for coverage calculation
-
-    ser = []
-
-    for user_id, user_profile in tqdm(data.iterrows(), total=len(data)):
-        prediction = model.predict(user_profile, n)
-        if prediction is None or prediction.ndim == 0:
-            continue
-
-        if control_items[user_id] in prediction:  # if prediction contains control item increase hit counter
-            hit += 1
-
-        all_recommendations.extend(list(prediction))
-        total_recommendations += 1
-
-        recommended_items_embeddings = get_movies_by_ids(movies, prediction)
-
-        if len(user_profile) == 0:  # check if user profile is empty
-            continue
-
-        ser.append(
-            serendipity(recommended_items_embeddings, prediction,
-                        primitive_recommendations[user_id], user_embeddings[user_id],
-                        gamma=args.gamma, alpha=args.alpha, beta=args.beta)
-        )
-
-    if total_recommendations > 0:
-        recall = hit / total_recommendations
-    else:
-        recall = 0
-
-    coverage = np.unique(all_recommendations).shape[0] / model.train_data.shape[1]
-    return recall, coverage, np.mean(ser)
-
-
 params_grid = {
-    'AutoRec': {'hidden_layer_size': [8, 16, 64, 128, 192, 256, 384, 512, 768, 1024, 1536, 2048],
-                'random_state': [11, 42, 77]},
     'KNNpopularity': {'k': [5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100, 300, 500, 700, 1000]},
     'MatrixFactorization': {'n_components': [5, 10, 20, 50, 100, 200, 500, 1000, 2000], 'random_state': [42]},
+    'EASE': {'l': [1.0, 10.0, 50.0, 100.0, 250.0, 500.0, 750.0, 1000.0, 2000.0, 5000.0, 10000.0]}
 }
 
 for model_name in models.keys():

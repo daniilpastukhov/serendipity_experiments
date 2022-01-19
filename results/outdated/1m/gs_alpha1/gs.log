@@ -1,0 +1,4 @@
+[2021-08-11 00:40:24,426] INFO  Dataset: 1m
+[2021-08-11 00:40:24,780] INFO  Grid search started: AutoRec
+[2021-08-11 00:40:38,540] DEBUG  Started AutoRec, {'hide_layer': 4}
+[2021-08-11 00:40:38,759] INFO  5530: 597 [2716  318 1036 1210 1580 2858 2762  110 1259  919] - False

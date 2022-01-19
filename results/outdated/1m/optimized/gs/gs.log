@@ -1,0 +1,25 @@
+[2021-08-25 18:22:26,861] INFO  Dataset: 1m
+[2021-08-25 18:22:26,887] INFO  Grid search started: KNNpopularity
+[2021-08-25 18:22:26,888] DEBUG  Started KNNpopularity, {'K': 2}
+[2021-08-25 18:24:09,120] INFO  Dataset: 1m
+[2021-08-25 18:24:17,603] INFO  Grid search started: KNNpopularity
+[2021-08-25 18:24:17,604] DEBUG  Started KNNpopularity, {'K': 2}
+[2021-08-25 18:25:02,828] INFO  Dataset: 1m
+[2021-08-25 18:25:11,519] INFO  Grid search started: KNNpopularity
+[2021-08-25 18:25:11,521] DEBUG  Started KNNpopularity, {'K': 2}
+[2021-08-25 18:30:00,989] INFO  Dataset: 1m
+[2021-08-25 18:30:09,626] INFO  Grid search started: KNNpopularity
+[2021-08-25 18:30:09,628] DEBUG  Started KNNpopularity, {'K': 2}
+[2021-08-25 18:31:54,349] INFO  Dataset: 1m
+[2021-08-25 18:32:02,910] INFO  Grid search started: KNNpopularity
+[2021-08-25 18:32:02,921] DEBUG  Started KNNpopularity, {'K': 2}
+[2021-08-25 18:34:57,463] INFO  Dataset: 1m
+[2021-08-25 18:35:05,701] WARNING  From C:\Users\Daniil\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow_core\python\ops\resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+[2021-08-25 18:35:05,712] WARNING  From C:\Users\Daniil\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow_core\python\keras\backend.py:4277: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+[2021-08-25 18:35:05,740] WARNING  Large dropout rate: 0.8 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+[2021-08-25 18:35:24,229] INFO  Grid search started: KNNpopularity
+[2021-08-25 18:35:24,230] DEBUG  Started KNNpopularity, {'K': 2}

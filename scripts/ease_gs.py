@@ -66,11 +66,10 @@ def evaluate():
         if len(user_profile) == 0:  # if user profile is empty
             continue
 
-        serendipity_results.append(
-            serendipity(recommended_items, prediction,
-                        primitive_predictions, user_profile,
-                        gamma=args.gamma, alpha=args.alpha, beta=args.beta)
-        )
+        primitive_recs = np.array(list(primitive_recommendations[user_id].values()))
+
+        rel.append(relevance(recommended_items, user_embeddings[user_id]))
+        unexp.append(unexpectedness(prediction, primitive_recs))
 
     if total_recommendations > 0:
         recall = hit / total_recommendations
@@ -100,10 +99,12 @@ user_embeddings = {}
 for user_id, user_profile in test_data.iterrows():
     user_embeddings[user_id] = get_movies_by_profile(movies, user_profile)
 
-primitive_models = PrimitiveModels(train_data, ratings, item_ratings)
 n = 10  # number of recommendations for each user
 
+primitive_recommendations = None
+
 if not os.path.isfile('cache/primitive_recommendations.joblib'):
+    primitive_models = PrimitiveModels(train_data, ratings, item_ratings)
     primitive_recommendations = primitive_models.make_recommendations(test_data, n)
     dump(primitive_recommendations, 'cache/primitive_recommendations.joblib')
 else:
