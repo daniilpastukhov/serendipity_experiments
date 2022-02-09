@@ -1,4 +1,6 @@
 # ref: Stanislav Kuznetsov
+import json
+
 import pandas as pd
 
 import numpy as np
@@ -18,7 +20,7 @@ class MatrixFactorization:
         self.users_amount = len(train_data)
         self.train_data_sparse = csr_matrix(self.train_data.values)
         self.item_ratings = item_ratings
-        self.beta = 1.0
+        self.beta = 0.0
 
         self.SVD = None
         self.matrix = None
@@ -30,7 +32,7 @@ class MatrixFactorization:
             random_state = params['random_state']
 
             self.SVD = TruncatedSVD(n_components=n_components, random_state=random_state)
-            self.matrix = self.SVD.fit_transform(self.train_data)
+            self.matrix = self.SVD.fit_transform(self.train_data.values)
 
             self.model_knn = NearestNeighbors(metric='cosine', algorithm='auto', n_neighbors=20, n_jobs=-1)
             self.model_knn.fit(self.matrix)
